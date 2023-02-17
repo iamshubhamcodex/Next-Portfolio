@@ -33,7 +33,6 @@ export default function ECoachingStates({ children }) {
     }, 2900);
   };
   const addUser = async (userData) => {
-    console.table(userData);
     let response = await fetch(
       "https://nextportfolio-mu.vercel.app/api/ECoaching/add",
       {
@@ -74,7 +73,6 @@ export default function ECoachingStates({ children }) {
       showAlert("Successfully LoggedIn", true);
       setLogged(true);
       window.localStorage.setItem("loggedIn", true);
-      console.log(data);
       if (data.admin) {
         window.localStorage.setItem("user", JSON.stringify(data.user));
       } else {
@@ -84,7 +82,6 @@ export default function ECoachingStates({ children }) {
       return { bool: true, isAdmin: data.admin };
     } else {
       showAlert(data.error, false);
-      console.log(data);
       return { bool: false, error: data.error };
     }
   };

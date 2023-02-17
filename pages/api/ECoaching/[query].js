@@ -11,7 +11,6 @@ export default async function handler(req, res) {
       switch (query.query) {
         case "add":
           try {
-            res.json(body);
             const user = new User(body);
             const savedUser = await user.save();
             // sendMail function goes here. Parameter = body.email;
