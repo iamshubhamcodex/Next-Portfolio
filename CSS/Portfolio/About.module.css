@@ -1,0 +1,125 @@
+.about {
+  position: relative;
+  min-height: calc(100vmin - 6rem);
+  height: max-content;
+  padding: 10rem 0;
+  background-image: url("../../Assets/Portfolio/aboutBg.png");
+  background-repeat: no-repeat;
+  background-size: 85%;
+  transition: all 0.3s linear;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  box-shadow: inset 0 -7px 10px -0px rgba(0 0 0 /40%);
+}
+.about .aboutMe {
+  padding: 0 2rem;
+  width: 55%;
+  font-family: "Inter", sans-serif;
+  transition: all 0.3s linear;
+}
+.about .aboutMe h1 {
+  color: #ff7900;
+  font-size: 7rem;
+  margin-bottom: 1rem;
+}
+.about .aboutMe h3 {
+  color: #0c0080;
+  font-size: 5rem;
+}
+.about .aboutMe p {
+  margin-top: 1.5rem;
+  font-size: 3rem;
+  margin-left: 1rem;
+}
+.about .aboutMe p .space {
+  margin-right: 10rem;
+}
+.about .aboutMe p .thank {
+  float: right;
+  margin-top: 3.5rem;
+  color: #00c2ff;
+  font-weight: 600;
+}
+@media only screen and (max-width: 1400px) {
+  .about {
+    background-size: 90%;
+    background-position-y: center;
+  }
+  .aboutMe {
+    width: 50% !important;
+  }
+}
+.down1 {
+  position: absolute;
+  bottom: 0;
+  font-size: 7rem;
+  font-weight: 800;
+  left: 50%;
+  color: #5dd3f9;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+@media only screen and (max-width: 1024px) {
+  .about {
+    background-size: 80%;
+  }
+  .aboutMe {
+    width: 55% !important;
+  }
+  .about .aboutMe h1 {
+    font-size: 6rem;
+    margin-bottom: 0.7rem;
+  }
+  .about .aboutMe h3 {
+    font-size: 4.5rem;
+  }
+  .about .aboutMe p {
+    margin: 1rem 0 0 0.7rem;
+    font-size: 3rem;
+  }
+}
+@media only screen and (max-width: 804px) {
+  .about {
+    background-size: 70%;
+    padding: 7rem 0;
+  }
+  .aboutMe {
+    width: 62% !important;
+  }
+  .about .aboutMe h1 {
+    font-size: 5rem;
+  }
+  .about .aboutMe h3 {
+    font-size: 3.5rem;
+  }
+  .about .aboutMe p {
+    font-size: 2.5rem;
+  }
+}
+@media only screen and (max-width: 624px) {
+  .about {
+    background-size: 70%;
+    padding: 5rem 0;
+    min-height: max-content !important;
+    padding: 7rem 0;
+    box-shadow: inset 0 -7px 10px -0px rgba(0 0 0 /30%);
+  }
+  .aboutMe {
+    width: 60% !important;
+  }
+  .about .aboutMe h1 {
+    font-size: 3rem;
+    margin-bottom: 0.7rem;
+  }
+  .about .aboutMe h3 {
+    font-size: 2.5rem;
+  }
+  .about .aboutMe p {
+    margin: 1rem 0 0 0.7rem;
+    font-size: 1.4rem;
+  }
+  .down1 {
+    font-size: 5rem;
+  }
+}

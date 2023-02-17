@@ -1,0 +1,236 @@
+.content {
+  width: 100%;
+  min-height: calc(100vmin - 6rem);
+  height: max-content;
+  background-image: url("../../Assets/Portfolio/bg.png");
+  background-size: cover;
+  background-position: center;
+  z-index: -10;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  transition: all 0.3s ease-in;
+}
+.content .greet {
+  width: 45rem;
+  height: 38rem;
+}
+.content .greet h1 {
+  font-size: 5.3rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+}
+.content .greet h3 {
+  font-size: 4.5rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+}
+.content .greet h3 span:first-child {
+  color: #0c0080;
+}
+.content .greet h3 span:last-child {
+  color: #ff7900;
+}
+.content .avtar {
+  width: 38rem;
+  height: 38rem;
+}
+.content .avtar img {
+  width: 100%;
+  height: 100%;
+}
+.content .greet p {
+  padding: 1rem 1rem;
+  font-size: 2.5rem;
+}
+.content .greet p span {
+  font-weight: bold;
+  color: #58008e;
+}
+.content .greet .btn {
+  border-radius: 2.5rem;
+  padding: 0 1.7rem;
+  margin: 3rem 0;
+  height: 5rem;
+  width: 15rem;
+  background-color: #58008e;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform 0.3s ease-in-out;
+}
+.content .greet .btn:hover {
+  transform: translateY(0.5rem);
+}
+.icons {
+  display: flex;
+}
+.icons .icon {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  margin: 0 1.5rem;
+  background-color: black;
+  display: grid;
+  place-content: center;
+  color: #00c2ff;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+}
+.icons .icon:hover {
+  color: black;
+  background-color: #00c2ff;
+}
+.icons .icon i {
+  font-size: 2rem;
+}
+
+.down {
+  position: absolute;
+  top: calc(90vmin - 2rem);
+  font-size: 7rem;
+  font-weight: 800;
+  left: 50%;
+  color: #5dd3f9;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 1400px) {
+  .content .greet {
+    width: 50rem !important;
+  }
+  .content .greet h1 {
+    font-size: 6rem !important;
+  }
+  .content .greet h3 {
+    font-size: 5rem !important;
+  }
+  .content .greet p {
+    font-size: 2.8rem;
+  }
+  .content .greet .btn {
+    border-radius: 3rem;
+    height: 6rem;
+    width: 18rem;
+    font-size: 2.5rem;
+  }
+  .icons .icon {
+    height: 5.5rem;
+    width: 5.5rem;
+  }
+  .icons .icon i {
+    font-size: 2.5rem;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .content .greet {
+    width: 39rem !important;
+  }
+  .content .greet h1 {
+    font-size: 4.8rem !important;
+  }
+  .content .greet h3 {
+    font-size: 4rem !important;
+  }
+  .content .avtar {
+    width: 35rem;
+    height: 35rem;
+  }
+  .icons .icon {
+    height: 6rem;
+    width: 6rem;
+  }
+  .icons .icon i {
+    font-size: 2.7rem;
+  }
+}
+@media only screen and (max-width: 804px) {
+  .content .greet {
+    width: 35rem !important;
+  }
+  .content .greet h1 {
+    font-size: 4.2rem !important;
+  }
+  .content .greet h3 {
+    font-size: 3.7rem !important;
+  }
+  .content .avtar {
+    width: 29rem;
+    height: 29rem;
+  }
+  .content .greet .btn {
+    padding: 0 1.5rem;
+    margin: 2rem 2rem;
+    height: 4.5rem;
+    width: 14rem;
+    border-radius: 2.25rem;
+    font-size: 2rem;
+  }
+  .icons .icon {
+    height: 4rem;
+    width: 4rem;
+  }
+  .icons .icon i {
+    font-size: 2rem;
+  }
+}
+@media only screen and (max-width: 624px) {
+  .content .greet {
+    width: 50vmin !important;
+    height: max-content;
+  }
+  .content .greet h1 {
+    font-size: 2.7rem !important;
+  }
+  .content .greet h3 {
+    font-size: 2.2rem !important;
+  }
+  .content .greet p {
+    padding: 1rem 1.5rem;
+    font-size: 1.4rem;
+  }
+  .content .greet .btn {
+    padding: 0 1.7rem;
+    margin: 1rem 2rem;
+    height: 3rem;
+    width: 11rem;
+    border-radius: 1.5rem;
+    font-size: 1.2rem;
+  }
+  .icons {
+    margin-left: 1.5rem;
+  }
+  .icons .icon {
+    height: 3rem;
+    width: 3rem;
+    margin: 0 1rem;
+  }
+  .icons .icon i {
+    font-size: 1.5rem;
+  }
+  .content .avtar {
+    width: 18rem;
+    height: 18rem;
+  }
+  .down {
+    font-size: 5rem;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .content .greet .btn {
+    padding: 0 1.3rem;
+    margin: 0.7rem 2rem;
+    height: 2.5rem;
+    width: 9rem;
+    font-weight: 700;
+  }
+  .icons {
+    margin-left: 1.2rem;
+  }
+}

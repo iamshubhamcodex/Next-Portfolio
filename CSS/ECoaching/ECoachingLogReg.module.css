@@ -1,0 +1,189 @@
+.logReg {
+  margin-top: var(--navHeight);
+  background-color: #a7a7ae;
+  height: calc(100vh - var(--navHeight));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logReg .cont {
+  /* aspect-ratio: 1.7/1; */
+  min-width: 40rem;
+  width: 45vmax;
+  max-width: 100rem;
+  min-height: 30vmax;
+  height: max-content;
+  max-height: calc(100% - 10rem);
+  position: relative;
+}
+.logReg .cont .log {
+  border-radius: 1vmax;
+  position: absolute;
+  top: 0;
+  display: flex;
+  height: max-content;
+  width: 100%;
+  background-color: white;
+  z-index: 2;
+  box-shadow: 7px 1px 14px -7px black;
+  overflow: hidden;
+}
+.logReg .cont .log::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  left: 0;
+  width: 50%;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(115, 185, 231, 0.687),
+    transparent
+  );
+}
+.logReg .cont .log.logg::before {
+  background-image: linear-gradient(to bottom, #f75915b3, transparent);
+}
+.logReg .cont .log.active {
+  z-index: 10;
+}
+.logReg .cont .log img {
+  height: 100%;
+  width: 50%;
+  position: absolute;
+  z-index: -1;
+}
+.logReg .cont .log form {
+  padding: 2.7vmax 3.5vmax;
+  margin-left: 50%;
+}
+.logReg .cont .log form h3 {
+  text-align: center;
+  line-height: 4vmax;
+  font-size: 2.2vmax;
+}
+.logReg .cont .log form p {
+  color: #606060;
+  margin: 0.7vmax;
+  font-size: 0.8vmax;
+  letter-spacing: 1.5px;
+}
+.logReg .cont .log form p span {
+  letter-spacing: 0px;
+  scale: 1.2;
+  font-weight: bold;
+  cursor: pointer;
+}
+.logReg .cont .log form .form {
+  margin-top: 1.5vmax;
+}
+.logReg .cont .log form .form input:not([type="checkbox"]) {
+  margin-bottom: 1.5vmax;
+  padding: 0 1.5vmax;
+  outline: none;
+  border: 1px solid #aeaeae;
+  border-radius: 3px;
+  width: 100%;
+  height: 2.5vmax;
+  font-size: 0.85vmax;
+}
+.showPas {
+  margin: -1vmax 0 2vmax 0 !important;
+  cursor: pointer;
+  letter-spacing: normal;
+}
+.logReg .cont .log form .form input:focus {
+  color: orange;
+  border-color: rgb(203, 139, 19);
+}
+.logReg .cont .log form .form input:focus::placeholder {
+  color: orange;
+}
+.logReg .cont .log form .form button {
+  width: 100%;
+  line-height: 2vmax;
+  border-radius: 5px;
+  outline: none;
+  background-color: #d1a976;
+  color: white;
+  font-weight: bolder;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+.logReg .cont .log form .form button:focus {
+  background-color: #c37a1a;
+  border: 1px solid saddlebrown;
+}
+.logReg .cont .log form .form input[type="checkbox"] {
+  height: 15px;
+  width: 15px;
+}
+.logReg .cont .log form .form .pp {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1vmax 0;
+  font-size: 0.75vmax;
+}
+@media only screen and (max-width: 720px) {
+  .logReg .cont {
+    min-height: 60vh;
+    height: max-content;
+  }
+  .logReg .cont .log {
+    flex-direction: column;
+  }
+  .logReg .cont .log::before {
+    display: none !important;
+  }
+  .logReg .cont .log form h3 {
+    line-height: 4vmin;
+  }
+  .logReg .cont .log form {
+    padding: 1vmax 7vmax 2vmax;
+    margin: 0;
+  }
+  .logReg .cont .log form .form {
+    margin-top: 3vmin;
+  }
+  .logReg .cont .log form h3 {
+    font-size: 4vmin;
+    line-height: 6vmin;
+  }
+  .logReg .cont .log form p {
+    font-size: 2vmin;
+    margin: 1vmin;
+  }
+  .logReg .cont .log form .form input:not([type="checkbox"]) {
+    font-size: 2vmin;
+    padding: 0 2.5vmin;
+    height: 5vmin;
+    margin-bottom: 3vmin;
+  }
+  .logReg .cont .log form .form button {
+    line-height: 4vmin;
+    margin: 3vmin 0;
+  }
+  .logReg .cont .log form .form .pp {
+    margin: 0.5vmax 0;
+  }
+  .logReg .cont .log form .form .pp * {
+    font-size: 2vmin !important;
+  }
+  .logReg .cont .log form .form input[type="checkbox"] {
+    height: 15px;
+    width: 15px;
+  }
+}
+
+.loading {
+  animation: rotate 0.5s linear infinite;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(350deg);
+  }
+}

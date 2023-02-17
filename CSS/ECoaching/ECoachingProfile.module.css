@@ -1,0 +1,21 @@
+.profile {
+  margin-top: var(--navHeight);
+  min-height: calc(100vh - var(--navHeight));
+  background-color: aliceblue;
+  display: grid;
+  place-content: center;
+}
+.profile table {
+  max-width: 80rem;
+  width: 67vw;
+}
+.profile table tr {
+  height: 3vmax;
+}
+.profile table tr * {
+  font-size: 1.5vmax;
+}
+.profile table tr th::after {
+  position: absolute;
+  content: ":";
+}

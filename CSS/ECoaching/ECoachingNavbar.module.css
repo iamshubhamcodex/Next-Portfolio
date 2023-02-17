@@ -1,0 +1,66 @@
+.nav {
+  width: 100vw;
+  height: var(--navHeight);
+  color: #606060;
+  background-color: white;
+  box-shadow: 0 7px 10px -7px grey;
+  font-size: 2rem;
+  padding: 0 5rem;
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 12;
+}
+.nav *,
+.mobNav * {
+  cursor: pointer;
+}
+.nav .logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: black;
+}
+.nav .menus {
+  display: flex;
+}
+.nav .menus .link {
+  padding: 0 2.5rem;
+  color: #606060;
+  font-size: 1.7rem;
+}
+.nav .menus .link:hover,
+.nav .menus .link.active {
+  color: #d1a976;
+}
+.mobNav {
+  position: fixed;
+  top: -100%;
+  left: 0;
+  height: calc(100vh - var(--navHeight));
+  width: 100%;
+  background-color: whitesmoke;
+  padding: 0 2.3rem;
+  z-index: 3;
+  transition: all 0.6s cubic-bezier(0.7, -0.5, 0.5, 1.5);
+}
+.mobNav.active {
+  top: var(--navHeight);
+}
+.mobNav .link {
+  height: var(--navHeight);
+  border-bottom: 1px solid gainsboro;
+  line-height: var(--navHeight);
+  font-size: 1.3rem;
+}
+.mobNav .link:hover,
+.mobNav .link.active {
+  color: #d1a976;
+}
+
+@media only screen and (max-width: 480px) {
+  .logo {
+    font-size: 2rem !important;
+  }
+}

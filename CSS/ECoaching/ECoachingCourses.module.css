@@ -1,0 +1,114 @@
+.courses {
+  margin-top: var(--navHeight);
+  padding: 3vmax 4vmax;
+  background-color: rgb(237, 224, 208);
+  min-height: 100vh;
+  height: max-content;
+}
+.courses h1 {
+  font-size: 3vmax;
+}
+.courses .container {
+  margin: 2vmax;
+  padding: 1vmax;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.courses .container .card {
+  position: relative;
+  border: 1px solid black;
+  width: 38vmax;
+  height: 18vmax;
+  display: flex;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: whitesmoke;
+  box-shadow: 7px 7px 14px -12px black, inset 7px 7px 14px -12px white,
+    inset -7px -7px 14px -14px black;
+  margin: 1vmax 2vmax;
+}
+.courses .container .card:hover {
+  box-shadow: 7px 7px 14px -7px black;
+  translate: 0 -10px;
+}
+.courses .container .card .img {
+  height: 100%;
+  width: 50%;
+}
+.courses .container .card .img img {
+  height: 100%;
+  width: 100%;
+}
+.courses .container .card .abt {
+  padding: 1vmax 1.5vmax;
+  width: 50%;
+}
+.courses .container .card .abt h2 {
+  font-size: 1.7vmax;
+  margin-bottom: 1vmax;
+}
+.courses .container .card .abt .price {
+  position: absolute;
+  content: "";
+  bottom: 0.5vmax;
+  right: 0;
+  width: 50%;
+  padding: 0 1vmax;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.courses .container .card .abt .price span {
+  color: grey;
+}
+.courses .container .card .abt .price button {
+  padding: 0.2vmax 0.6vmax;
+  cursor: pointer;
+  border-radius: 3px;
+  outline: none;
+  font-size: 0.85vmax;
+  border: 2px solid saddlebrown;
+  color: saddlebrown;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.courses .container .card .abt .price button:hover {
+  background-color: rgb(199, 107, 41);
+  color: white;
+}
+@media only screen and (max-width: 720px) {
+  .courses .container .card {
+    height: 38vmax;
+    width: 30vmax;
+    flex-direction: column;
+    padding-bottom: 1.5vmax;
+    margin: 2rem;
+  }
+  .courses .container .card .img {
+    height: 50%;
+    width: 100%;
+  }
+  .courses .container .card .abt {
+    width: 100%;
+  }
+  .courses .container .card .abt h2 {
+    font-size: 2.7vmax;
+  }
+  .courses .container .card .abt p {
+    font-size: 2vmax;
+  }
+  .courses .container .card .abt .price {
+    width: 100%;
+    bottom: 1.8vmax;
+    padding: 0 2vmax;
+  }
+  .courses .container .card .abt .price button {
+    scale: 1.5;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .card {
+    width: 90vw !important;
+  }
+}

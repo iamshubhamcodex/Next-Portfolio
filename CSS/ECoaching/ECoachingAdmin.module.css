@@ -1,0 +1,14 @@
+.dashboard {
+  margin-top: var(--navHeight);
+  min-height: calc(100vh - var(--navHeight));
+  background-color: beige;
+  display: grid;
+  place-content: center;
+}
+.dashboard table tr {
+  height: 2vmax;
+  font-size: 1.2vmax;
+}
+.dashboard table tr td {
+  padding: 0 0.75vmax;
+}

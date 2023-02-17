@@ -1,0 +1,116 @@
+import { useRouter } from "next/router";
+import { createContext, useEffect, useState } from "react";
+
+export const ECoachingContext = createContext();
+
+export default function ECoachingStates({ children }) {
+  const router = useRouter();
+  const [mob, setMob] = useState(false);
+  const [userD, setUserD] = useState(null);
+  const [navActive, setNavActive] = useState("Home");
+  const [logged, setLogged] = useState(false);
+  const [alert, setAlert] = useState({
+    suc: false,
+    bool: false,
+    msg: "Nothing Right Now",
+  });
+
+  useEffect(() => {
+    if (Boolean(localStorage.getItem("loggedIn"))) setLogged(true);
+    window.addEventListener("resize", () => {
+      setAcc();
+    });
+    setAcc();
+    //eslint-disable-next-line
+  }, []);
+  function setAcc() {
+    setMob(window.innerWidth < 720);
+  }
+  const showAlert = (val, suc) => {
+    setAlert({ suc: suc, bool: true, msg: val });
+    setTimeout(() => {
+      setAlert({ suc: false, bool: false, msg: "" });
+    }, 2900);
+  };
+  const addUser = async (userData) => {
+    console.table(userData);
+    let response = await fetch("http://localhost:3000/api/ECoaching/add", {
+      method: "POST",
+      body: JSON.stringify(userData),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    let data = await response.json();
+    if (data.success) {
+      showAlert("Successfully Registerd", true);
+      // router.push("/Projects/ECoaching/Login");
+      return { bool: true };
+    } else {
+      showAlert(data.error, false);
+      return { bool: false, error: data.error };
+    }
+  };
+  const checkUser = async ({ email, password }) => {
+    let response = await fetch("http://localhost:3000/api/ECoaching/get", {
+      method: "POST",
+      body: JSON.stringify({
+        email: email,
+        password: password,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    let data = await response.json();
+    if (data.success) {
+      showAlert("Successfully LoggedIn", true);
+      setLogged(true);
+      window.localStorage.setItem("loggedIn", true);
+      console.log(data);
+      if (data.admin) {
+        window.localStorage.setItem("user", JSON.stringify(data.user));
+      } else {
+        setUserD(data.user);
+        window.localStorage.setItem("user", JSON.stringify(data.user));
+      }
+      return { bool: true, isAdmin: data.admin };
+    } else {
+      showAlert(data.error, false);
+      return { bool: false, error: data.error };
+    }
+  };
+  function isVisib(ele) {
+    let hei = window.innerHeight;
+    let rect;
+    if (ele !== null) {
+      rect = ele.getBoundingClientRect();
+      if (rect.y < hei / 2 && (rect.y >= 0 || rect.bottom > hei / 4))
+        return true;
+    }
+    return false;
+  }
+
+  return (
+    <ECoachingContext.Provider
+      value={{
+        alert,
+        setAlert,
+        showAlert,
+        logged,
+        setLogged,
+        userD,
+        addUser,
+        checkUser,
+        isVisib,
+        mob,
+        setMob,
+        navActive,
+        setNavActive,
+      }}
+    >
+      {children}
+    </ECoachingContext.Provider>
+  );
+}

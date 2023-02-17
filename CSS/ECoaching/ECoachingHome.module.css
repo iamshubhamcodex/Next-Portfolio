@@ -1,0 +1,102 @@
+.home {
+  height: max-content;
+  width: 100%;
+  margin-top: var(--navHeight);
+  padding: 7vmax;
+  background-color: #f3ece4;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.home::after {
+  position: absolute;
+  content: "";
+  height: 50vmax;
+  width: 50vmax;
+  background-color: #d1aa76;
+  right: -7rem;
+  bottom: 50%;
+  transform: translateY(50%);
+  border-radius: 50%;
+}
+.home .quotes {
+  max-width: 45vmax;
+  margin-bottom: 2vmax;
+}
+.home .quotes h1 {
+  font-size: 3.5vmax;
+  font-weight: 800;
+}
+.home .quotes p {
+  text-align: center;
+  font-size: 1.8vmax;
+  margin: 4vmax 0 7vmax 0;
+  color: #606060;
+}
+.home .quotes .regisbutton {
+  background-color: #d1a976;
+  font-size: 1.3vmax;
+  color: white;
+  border: none;
+  outline: none;
+  padding: 1.4vmax 3vmax;
+  border-radius: 7px;
+  cursor: pointer;
+}
+@media only screen and (max-width: 1024px) {
+  .home::after {
+    width: 40vmax;
+    height: 40vmax;
+  }
+  .logoImage img {
+    width: 22vmax !important;
+  }
+}
+@media only screen and (max-width: 720px) {
+  .home {
+    flex-direction: column;
+  }
+  .home::after {
+    display: none;
+  }
+  .home .quotes {
+    max-width: 75vmax;
+  }
+  .home .quotes h1 {
+    font-size: 5vmin;
+  }
+  .home .quotes p {
+    font-size: 2.2vmin;
+  }
+  .home .quotes .regisbutton {
+    font-size: 1.5vmax !important;
+  }
+  .home .registerForm {
+    /* margin-top: 6vmax; */
+    display: none;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .home {
+    padding: 7vmax 2vmax;
+  }
+  .home .quotes h1 {
+    font-size: 9vmin;
+  }
+  .home .quotes p {
+    font-size: 4.2vmin;
+  }
+  .home .quotes .regisbutton {
+    font-size: 3vmax;
+    padding: 1.7vmax 3.5vmax;
+  }
+}
+.logoImage {
+  z-index: 2;
+}
+.logoImage img {
+  height: auto;
+  width: 25vmax;
+}

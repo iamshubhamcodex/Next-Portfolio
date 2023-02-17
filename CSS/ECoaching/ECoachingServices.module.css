@@ -1,0 +1,157 @@
+.services {
+  max-height: 100vh;
+  width: calc(100vw - 6vmax);
+  overflow: hidden;
+  height: max-content;
+  padding: 2vmax 3vmax;
+}
+.services h1 {
+  font-size: 3.2vmax;
+  font-weight: bolder;
+}
+.services .offers {
+  opacity: 0;
+  margin: 0 auto;
+  margin-top: 2.7vmax;
+  height: max-content;
+  width: 85vw;
+  max-width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  transition: opacity 0.3s linear;
+}
+.services .offers.active {
+  opacity: 1;
+}
+.services .offers .left,
+.services .offers .right {
+  height: calc(100vh - var(--navHeight) - 15vmax);
+  width: calc(50% - 15px);
+  position: relative;
+}
+.services .offers .left {
+  translate: -30% 0;
+  background-image: url("../../Assets/ECoaching/AllCourseOnline.png");
+}
+.services .offers .right {
+  translate: 30% 0;
+}
+.services .offers.active .left,
+.services .offers.active .right {
+  translate: 0 0;
+}
+.services .offers .left,
+.services .offers .right .right1,
+.services .offers .right .right2 {
+  border-radius: 0.7vmax;
+  overflow: hidden;
+  cursor: pointer;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.services .offers .right .right2 {
+  background-image: url("../../Assets/ECoaching/TutorOnMobile.png");
+}
+.services .offers .right .right1 {
+  background-image: url("../../Assets/ECoaching/DoubtSupport.png");
+}
+
+.services .offers .left:hover,
+.services .offers .right .right1:hover,
+.services .offers .right .right2:hover {
+  box-shadow: 5px 5px 15px -7px black;
+  translate: 0px -10px;
+}
+.services .offers .left::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-image: linear-gradient(to bottom, #cebfa6, transparent);
+}
+.services .offers .right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.services .offers .right .right1,
+.services .offers .right .right2 {
+  height: calc(50% - 10px);
+}
+.services .offers .right .right1::before,
+.services .offers .right .right2::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  border-radius: 0.7vmax;
+}
+.services .offers .right .right1::before {
+  background-image: linear-gradient(to bottom, rgb(23, 47, 84), transparent);
+}
+.services .offers .right .right2::before {
+  background-image: linear-gradient(to bottom, rgb(3, 4, 5), transparent);
+}
+.services .offers .inner {
+  position: absolute;
+  inset: 0;
+  padding: 1vmax 2.3vmax;
+  color: white;
+}
+.services .offers .inner p {
+  color: rgba(255 255 255 / 50%);
+  font-weight: bolder;
+  font-size: 1vmax;
+  margin: 0.56vmax 0;
+}
+.services .offers .inner h3 {
+  font-size: 2.5vmax;
+}
+.services > p {
+  margin: 1vmax auto;
+  display: flex;
+  justify-content: center;
+}
+.services p span {
+  color: #d1a976;
+  width: max-content;
+  font-size: 1.5vmax;
+  text-align: center;
+  padding: 0 0 5px;
+  cursor: pointer;
+  border-bottom: 2px solid #d1a976;
+}
+@media only screen and (max-width: 720px) {
+  .services {
+    padding: 4vmax;
+  }
+  .services h1 {
+    font-size: 6vmin;
+  }
+  .offers {
+    flex-direction: column;
+  }
+  .services .offers .left {
+    height: calc(calc(100vh - var(--navHeight) - 15vmax) / 2);
+  }
+  .services .offers .left,
+  .services .offers .right {
+    width: 100%;
+  }
+  .services .offers .left,
+  .services .offers .right1,
+  .services .offers .right1 {
+    margin: 2vmax 0;
+  }
+  .services .offers .inner p {
+    font-size: 2vmin;
+  }
+  .services .offers .inner h3 {
+    font-size: 5vmin;
+  }
+  .services p {
+    margin: 3vmin 0;
+  }
+  .services p span {
+    font-size: 3vmin;
+  }
+}

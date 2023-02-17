@@ -1,0 +1,93 @@
+.contact {
+  margin-top: var(--navHeight);
+  background-color: #9eb5c7;
+  min-height: calc(100vh - var(--navHeight));
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.contact img {
+  width: 40%;
+  height: calc(100vh - var(--navHeight));
+}
+.contact .forms {
+  border-radius: 7px;
+  max-width: 50rem;
+  margin-right: 10vmax;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 2vmax;
+}
+.contact .forms h1 {
+  text-align: center;
+  font-size: 2.2vmax;
+}
+.contact .forms p {
+  margin: 1vmax 0;
+  font-size: 1vmax;
+  letter-spacing: 1px;
+  text-align: center;
+  color: #606060;
+}
+.contact .forms input {
+  height: 3vmax;
+  border-radius: 3px;
+  outline: none;
+  border: 1px solid grey;
+  margin: 0.5vmax 0;
+  padding: 0 1.5vmax;
+}
+.contact .forms input:focus,
+.contact .forms .area:focus {
+  border: 1px solid orange;
+  color: orange;
+}
+.contact .forms input:focus::placeholder,
+.contact .forms .area:focus::placeholder {
+  color: orange;
+}
+.contact .forms .area {
+  border-radius: 3px;
+  outline: none;
+  border: 1px solid grey;
+  margin: 0.5vmax 0;
+  padding: 1vmax 1.5vmax;
+}
+.contact .forms button {
+  line-height: 2.5vmax;
+  margin: 2vmax 0 1vmax 0;
+  background-color: #dbb867;
+  outline: none;
+  border: 1px solid #907944;
+  border-radius: 5px;
+  color: white;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 1.2vmax;
+}
+@media only screen and (max-width: 720px) {
+  .contact {
+    justify-content: center;
+  }
+  .contact .forms {
+    margin: 0;
+    min-width: 25rem;
+    width: 90vw;
+    padding: 2vmax 4vmax;
+  }
+  .contact .forms h1 {
+    font-size: 5vmin;
+  }
+  .contact .forms p {
+    font-size: 2vmin;
+  }
+  .contact .forms input {
+    height: 5vmin;
+    margin: 1.5vmin 0;
+  }
+  .contact .forms button {
+    line-height: 4vmin;
+    font-size: 2vmin;
+  }
+}

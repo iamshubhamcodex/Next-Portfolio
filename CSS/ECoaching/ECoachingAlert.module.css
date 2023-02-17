@@ -1,0 +1,31 @@
+.alert {
+  z-index: 100;
+  position: absolute;
+  top: 5rem;
+  left: 50%;
+  translate: -50% 0;
+  padding: 0.5vmax 1.5vmax;
+  font-size: 1.8rem;
+  line-height: 3vmax;
+  background-color: white;
+  /* border: 2px solid rgb(10, 150, 0); */
+  /* border: 2px solid rgb(150, 10, 0); */
+  border-radius: 2rem;
+  animation: swipe 3s ease-in-out;
+}
+.alert i {
+  /* color: rgb(10, 150, 0); */
+  margin: 0 1.5vmax 0 0;
+}
+@keyframes swipe {
+  0%,
+  100% {
+    opacity: 0;
+    top: 0;
+  }
+  15%,
+  85% {
+    top: 5rem;
+    opacity: 1;
+  }
+}

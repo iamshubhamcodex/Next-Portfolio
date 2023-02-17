@@ -1,5 +1,10 @@
-import '@/styles/globals.css'
+import ECoachingStates from "@/Context/ECoaching/ECoachingStates";
+import "@/CSS/globals.css";
 
 export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <ECoachingStates>
+      <Component {...pageProps} />
+    </ECoachingStates>
+  );
 }
