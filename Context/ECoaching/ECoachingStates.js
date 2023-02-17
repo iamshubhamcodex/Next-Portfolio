@@ -78,6 +78,7 @@ export default function ECoachingStates({ children }) {
       return { bool: true, isAdmin: data.admin };
     } else {
       showAlert(data.error, false);
+      console.log(data);
       return { bool: false, error: data.error };
     }
   };
