@@ -34,13 +34,16 @@ export default function ECoachingStates({ children }) {
   };
   const addUser = async (userData) => {
     console.table(userData);
-    let response = await fetch("http://localhost:3000/api/ECoaching/add", {
-      method: "POST",
-      body: JSON.stringify(userData),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    let response = await fetch(
+      "https://nextportfolio-mu.vercel.app/api/ECoaching/add",
+      {
+        method: "POST",
+        body: JSON.stringify(userData),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
     let data = await response.json();
     if (data.success) {
       showAlert("Successfully Registerd", true);
@@ -52,16 +55,19 @@ export default function ECoachingStates({ children }) {
     }
   };
   const checkUser = async ({ email, password }) => {
-    let response = await fetch("http://localhost:3000/api/ECoaching/get", {
-      method: "POST",
-      body: JSON.stringify({
-        email: email,
-        password: password,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    let response = await fetch(
+      "https://nextportfolio-mu.vercel.app/api/ECoaching/get",
+      {
+        method: "POST",
+        body: JSON.stringify({
+          email: email,
+          password: password,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
 
     let data = await response.json();
     if (data.success) {
