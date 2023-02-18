@@ -8,12 +8,13 @@ export default function ECoachingNavbar() {
   const [menu, showMenu] = useState(false);
 
   const NavItems = ({ name }) => {
-    let href = name;
+    let href = "/Projects/ECoaching/" + name;
     if (name === "Home") href = "";
+    if (name === "Back Home") href = "/Portfolio";
     return (
       <>
         <Link
-          href={"/Projects/ECoaching/" + href}
+          href={href}
           className={
             navActive === name
               ? styles.active + ` ${styles.link}`
@@ -34,6 +35,7 @@ export default function ECoachingNavbar() {
       <>
         {logged && (
           <>
+            <NavItems name="Back Home" />
             <NavItems name="Home" />
             <NavItems name="Courses" />
             {JSON.parse(localStorage.getItem("user")) &&
@@ -50,6 +52,7 @@ export default function ECoachingNavbar() {
         )}
         {!logged && (
           <>
+            <NavItems name="Back Home" />
             <NavItems name="Home" />
             <NavItems name="About" />
             <NavItems name="Register" />
@@ -71,7 +74,7 @@ export default function ECoachingNavbar() {
           </div>
         )}
         {mob && (
-          <div data-c="chilkj" className={styles.mobile}>
+          <div className={styles.mobile}>
             <div className="bars" onClick={() => showMenu(!menu)}>
               {!menu && <i className="fa-solid fa-bars"></i>}
               {menu && <i className="fa-solid fa-x"></i>}

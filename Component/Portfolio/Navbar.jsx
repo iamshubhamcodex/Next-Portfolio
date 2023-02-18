@@ -37,10 +37,10 @@ const NavItems = (props) => {
       <NavItem set={props.set} id={props.id} name="About" />
       <NavItem set={props.set} id={props.id} name="Skills" />
       <NavItem set={props.set} id={props.id} name="Work" />
-      <Link href="/Notes" className={styles.navItem}>
+      <Link href="/Notes" className={styles.navItemm}>
         Notes
       </Link>
-      <Link href="/Projects/ECoaching" className={styles.navItem}>
+      <Link href="/Projects/ECoaching" className={styles.navItemm}>
         ECoaching
       </Link>
       <NavItem set={props.set} id={props.id} name="Contact" />
@@ -87,7 +87,7 @@ export default function Navbar() {
             <div className={`${styles.bars} ${styles.navItem}`}>
               <i className="fa-solid fa-bars"></i>
             </div>
-            <div className={style.navModal} style={style}>
+            <div className={styles.navModal} style={style}>
               <div className={styles.close}>
                 <i className="fa-solid fa-xmark"></i>
               </div>
