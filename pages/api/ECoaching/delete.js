@@ -7,11 +7,12 @@ export default async function handler(req, res) {
   await dbConnect();
   if (method === "POST") {
     try {
-      let admin = body.email === "root@admin";
-      let data = admin ? await User.find() : await User.find(body);
-      if (data.length > 0) {
-        res.json({ admin: admin, success: true, user: data });
-      } else res.send({ success: false, error: "No Credential Found" });
+      console.log(body._id);
+      await User.findByIdAndDelete(body._id);
+      res.json({ success: true, msg: "Deleted User" });
+      // const savedUser = await user.save();
+      // sendMail function goes here. Parameter = body.email;
+      // res.status(201).json({ success: true, user: savedUser });
     } catch (error) {
       console.log(error);
       res.json({
@@ -19,8 +20,5 @@ export default async function handler(req, res) {
         error: "Some Internal Error Occured while adding your task",
       });
     }
-  } else {
-    const response = await User.find();
-    res.status(200).json(response);
-  }
+  } else res.status(200).json({ for: "For adding users" });
 }

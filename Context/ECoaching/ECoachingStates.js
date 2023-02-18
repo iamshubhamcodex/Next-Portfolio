@@ -14,7 +14,8 @@ export default function ECoachingStates({ children }) {
     bool: false,
     msg: "Nothing Right Now",
   });
-  const host = "https://nextportfolio-mu.vercel.app/";
+  // const host = "https://nextportfolio-mu.vercel.app/";
+  const host = "http://localhost:3000/";
 
   useEffect(() => {
     if (Boolean(localStorage.getItem("loggedIn"))) setLogged(true);
@@ -87,6 +88,29 @@ export default function ECoachingStates({ children }) {
       return { bool: false, error: data.error };
     }
   };
+  const getUsers = async () => {
+    let response = await fetch(`${host}api/ECoaching/get`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "*/*",
+      },
+    });
+    let data = await response.json();
+    return data;
+  };
+  const deleteUser = async (id) => {
+    let response = await fetch(`${host}api/ECoaching/delete`, {
+      method: "POST",
+      body: JSON.stringify({
+        _id: id,
+      }),
+      headers: {
+        Accept: "*/*",
+        "Content-Type": "application/json",
+      },
+    });
+  };
   function isVisib(ele) {
     let hei = window.innerHeight;
     let rect;
@@ -108,7 +132,9 @@ export default function ECoachingStates({ children }) {
         setLogged,
         userD,
         addUser,
+        getUsers,
         checkUser,
+        deleteUser,
         isVisib,
         mob,
         setMob,
