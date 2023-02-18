@@ -47,7 +47,7 @@ export default function ECoachingStates({ children }) {
       let data = await response.json();
       if (data.success) {
         showAlert("Successfully Registerd", true);
-        // router.push("/Projects/ECoaching/Login");
+        router.push("/Projects/ECoaching/Login");
         return { bool: true };
       } else {
         showAlert(data.error, false);
