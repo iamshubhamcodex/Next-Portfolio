@@ -71,7 +71,7 @@ export default function ECoachingNavbar() {
           </div>
         )}
         {mob && (
-          <div className={styles.mobile}>
+          <div data-c="chilkj" className={styles.mobile}>
             <div className="bars" onClick={() => showMenu(!menu)}>
               {!menu && <i className="fa-solid fa-bars"></i>}
               {menu && <i className="fa-solid fa-x"></i>}
@@ -80,10 +80,7 @@ export default function ECoachingNavbar() {
         )}
       </nav>
       {mob && (
-        <div
-          data-tg="hi"
-          className={styles.mobNav + (menu ? ` ${styles.active}` : "")}
-        >
+        <div className={styles.mobNav + (menu ? ` ${styles.active}` : "")}>
           <NavList />
         </div>
       )}
