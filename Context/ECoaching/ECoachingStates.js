@@ -14,8 +14,8 @@ export default function ECoachingStates({ children }) {
     bool: false,
     msg: "Nothing Right Now",
   });
-  // const host = "https://nextportfolio-mu.vercel.app/";
-  const host = "http://localhost:3000/";
+  const host = "https://nextportfolio-mu.vercel.app/";
+  // const host = "http://localhost:3000/";
 
   useEffect(() => {
     if (Boolean(localStorage.getItem("loggedIn"))) setLogged(true);
