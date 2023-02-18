@@ -12,6 +12,7 @@ export default async function handler(req, res) {
         case "add":
           try {
             const user = new User(body);
+            console.log(body);
             const savedUser = await user.save();
             // sendMail function goes here. Parameter = body.email;
             res.status(201).json({ success: true, user: savedUser });

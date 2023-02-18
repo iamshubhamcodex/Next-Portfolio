@@ -14,6 +14,7 @@ export default function ECoachingStates({ children }) {
     bool: false,
     msg: "Nothing Right Now",
   });
+  const host = "https://nextportfolio-mu.vercel.app/";
 
   useEffect(() => {
     if (Boolean(localStorage.getItem("loggedIn"))) setLogged(true);
@@ -33,40 +34,41 @@ export default function ECoachingStates({ children }) {
     }, 2900);
   };
   const addUser = async (userData) => {
-    let response = await fetch(
-      "https://nextportfolio-mu.vercel.app/api/ECoaching/add",
-      {
+    try {
+      let response = await fetch(`${host}api/ECoaching/add`, {
         method: "POST",
         body: JSON.stringify(userData),
         headers: {
           "Content-Type": "application/json",
+          Accept: "*/*",
         },
+      });
+      let data = await response.json();
+      if (data.success) {
+        showAlert("Successfully Registerd", true);
+        // router.push("/Projects/ECoaching/Login");
+        return { bool: true };
+      } else {
+        showAlert(data.error, false);
+        return { bool: false, error: data.error };
       }
-    );
-    let data = await response.json();
-    if (data.success) {
-      showAlert("Successfully Registerd", true);
-      // router.push("/Projects/ECoaching/Login");
-      return { bool: true };
-    } else {
-      showAlert(data.error, false);
-      return { bool: false, error: data.error };
+    } catch (error) {
+      console.log(error);
+      return { bool: false, error: error };
     }
   };
   const checkUser = async ({ email, password }) => {
-    let response = await fetch(
-      "https://nextportfolio-mu.vercel.app/api/ECoaching/get",
-      {
-        method: "POST",
-        body: JSON.stringify({
-          email: email,
-          password: password,
-        }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    let response = await fetch(`${host}api/ECoaching/get`, {
+      method: "POST",
+      body: JSON.stringify({
+        email: email,
+        password: password,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "*/*",
+      },
+    });
 
     let data = await response.json();
     if (data.success) {

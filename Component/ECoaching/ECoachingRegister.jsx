@@ -42,7 +42,7 @@ export default function ECoachingRegister({ register }) {
       password: Rpassword.current.value,
     });
     setLoading(false);
-    if (res.bool) router.push("/Projects/ECoaching/Loin");
+    if (res.bool) router.push("/Projects/ECoaching/Login");
   };
 
   return (
