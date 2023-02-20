@@ -1,0 +1,59 @@
+.newChat {
+  position: absolute;
+  width: 60rem;
+  height: 40rem;
+  top: 4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  border-radius: 2rem;
+  border: 2px solid black;
+  background-color: whitesmoke;
+  padding: 2rem 4rem;
+}
+.newChat h1 {
+  text-align: center;
+  font-size: 4rem;
+  margin-bottom: 2rem;
+}
+.newChat .inp {
+  padding: 1rem 2rem;
+}
+.newChat .inp label {
+  font-size: 2rem;
+  font-weight: bold;
+  display: block;
+}
+.newChat .inp input {
+  width: 100%;
+  height: 3rem;
+  padding: 1rem 2rem;
+  font-size: 1.8rem;
+  border: none;
+  outline: 2px solid black;
+  border-radius: 5px;
+}
+.newChat .showUser {
+  margin: 2rem 0;
+  border: 1px solid black;
+  height: 18rem;
+  padding: 2rem 4rem;
+}
+.newChat .showUser .user {
+  background-color: rgb(187, 187, 187);
+  padding: 1rem 3rem;
+  border-radius: 3rem;
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.newChat .showUser .user h2 {
+  font-size: 2rem;
+}
+.newChat .showUser .user p {
+  font-size: 1.2rem;
+}
+.newChat .close {
+  float: right;
+  font-size: 3rem;
+}

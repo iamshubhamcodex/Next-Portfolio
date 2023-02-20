@@ -1,0 +1,81 @@
+.home {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  --width: 45rem;
+}
+.home form {
+  max-width: var(--width);
+  max-height: max-content;
+}
+.home form h1 {
+  text-align: center;
+  font-weight: bolder;
+  font-size: 4rem;
+  padding: 2rem 3rem;
+}
+.home .login {
+  margin: 4rem 0;
+}
+.home .login .connector {
+  height: 2rem;
+  width: var(--width);
+  text-align: end;
+  font-size: 1.5rem;
+}
+.home .login .connector .link {
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: rgb(10, 80, 232);
+}
+.home .login .inp {
+  margin: 2rem 0;
+}
+.home .login .inp * {
+  display: block;
+  font-size: 1.7rem;
+}
+.home .login .inp label {
+  font-weight: bold;
+}
+.home .login .inp input {
+  padding: 1rem 2rem;
+  outline: 2px solid black;
+  border-radius: 5px;
+  border: none;
+  width: var(--width);
+}
+.home .login .regisbtn {
+  width: var(--width);
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  border: none;
+  background-color: rgba(10, 80, 232, 0.782);
+  border-radius: 5px;
+  margin: 4rem 0;
+  font-size: 1.5rem;
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+  transition: background-color 0.5s linear;
+}
+.home .login .regisbtn:hover,
+.home .login .regisbtn:active {
+  background-color: rgb(10, 80, 232);
+}
+
+.loading {
+  margin-left: 1rem;
+  animation: rotate 0.5s linear infinite;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(350deg);
+  }
+}

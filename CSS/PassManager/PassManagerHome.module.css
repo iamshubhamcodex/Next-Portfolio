@@ -1,0 +1,85 @@
+.home {
+  background: url("../../Assets/PassManager/bg-9df16e63.png") no-repeat center
+    center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem 0;
+}
+
+.card {
+  min-height: 100px;
+  height: max-content;
+  min-width: 320px;
+  background: rgba(255, 255, 255, 0.06);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  margin: 0.75rem 0;
+  border-radius: 8px;
+  -webkit-box-shadow: 20px 20px 22px rgba(0, 0, 0, 0.5);
+  box-shadow: 20px 20px 22px rgba(0, 0, 0, 0.5);
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+}
+.card:hover {
+  background: rgba(255 255 255 / 0.1);
+}
+.card > .title {
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  padding: 5px 10px;
+  background: rgba(255 255 255 / 0.15);
+  backdrop-filter: blur(30px);
+}
+.card > table {
+  padding: 0.5rem 0.75rem;
+  color: #c0c0c0;
+}
+.card > table tr td {
+  line-height: 20px;
+  padding-right: 10px;
+}
+.card > table tr td:first-child {
+  font-weight: bolder;
+  color: white;
+}
+.card > table tr td.copy {
+  font-size: 9px;
+  padding: 5px 7px;
+  color: white;
+  cursor: pointer;
+  background: rgba(255 255 255 /0.1);
+  border-radius: 7px;
+  font-weight: 700;
+}
+.card > .delete {
+  font-size: 10px;
+  cursor: pointer;
+  padding: 3 px;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  background: rgba(255 255 255 /0.1);
+  user-select: none;
+}
+.card > .delete:hover {
+  background: rgba(255 255 255/ 0.2);
+}
+.copied {
+  position: fixed;
+  bottom: -2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #03072a;
+  color: #c0c0c0;
+  padding: 0.5rem 0.75rem;
+  border-radius: 12px;
+  transition: bottom 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.copied.active {
+  bottom: 1.5rem;
+}

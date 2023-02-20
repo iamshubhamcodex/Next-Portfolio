@@ -4,7 +4,7 @@ import dbConnect from "@/lib/dbConnect";
 export default async function handler(req, res) {
   const { body, method } = req;
 
-  await dbConnect();
+  await dbConnect("ecoaching");
   if (method === "POST") {
     try {
       console.log(body._id);

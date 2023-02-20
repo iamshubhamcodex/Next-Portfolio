@@ -1,0 +1,70 @@
+.main {
+  width: calc(100vw - 40rem - 4rem);
+  margin: 0 2rem;
+  border-radius: 3rem;
+  overflow: hidden;
+  border: 1px solid black;
+}
+.main h1 {
+  padding: 2rem 4rem;
+  background-color: rgb(219, 219, 219);
+  font-size: 4rem;
+  text-align: center;
+}
+.main .chats {
+  padding: 4rem 2rem 2rem;
+  height: calc(100vh - 9rem);
+  display: flex;
+  flex-direction: column;
+}
+.main .chats .msgCont {
+  overflow-y: auto;
+  flex-grow: 1;
+}
+.main .chats .msgCont .msg {
+  height: 3rem;
+  font-size: 2rem;
+  line-height: 2rem;
+  margin: 6px 0;
+}
+.main .chats .msgCont .msg .right {
+  border: 1px solid black;
+  padding: 5px 1rem;
+  border-radius: 5px;
+  background-color: rgb(0, 112, 233);
+  float: right;
+}
+.main .chats .msgCont .msg .left {
+  padding: 5px 1rem;
+  border-radius: 5px;
+  background-color: rgba(103, 165, 232, 0.757);
+  border: 1px solid black;
+  width: max-content;
+}
+
+.main .chats .sendCont {
+  margin-top: 2rem;
+  border: 2px solid black;
+  height: 6rem;
+  border-radius: 3rem;
+  overflow: hidden;
+  display: flex;
+}
+.main .chats .sendCont input {
+  height: 100%;
+  width: calc(100% - 6rem);
+  border: none;
+  outline: none;
+  padding: 0 3rem;
+  font-size: 2.5rem;
+}
+.main .chats .sendCont .send {
+  width: 6rem;
+  height: 6rems;
+  background-color: royalblue;
+  display: grid;
+  place-content: center;
+  font-size: 2.7rem;
+  color: white;
+  cursor: pointer;
+}

@@ -1,0 +1,42 @@
+.sidebar {
+  --width: 40rem;
+  width: var(--width);
+  height: 100vh;
+  background-color: rgb(225, 224, 224);
+  border-radius: 0 2rem 2rem 0;
+  overflow: hidden;
+  padding: 2rem 2rem;
+  border: 1px solid black;
+}
+.sidebar .new {
+  height: 4rem;
+  font-size: 2.3rem;
+  text-align: center;
+  line-height: 4rem;
+  cursor: pointer;
+  background-color: rgb(10, 80, 232);
+  font-weight: 800;
+  color: white;
+}
+.sidebar .new:hover {
+  background-color: rgb(0, 66, 207);
+}
+.sidebar hr {
+  margin: 2rem 0;
+  border-top: 2px solid black;
+}
+.sidebar .chat {
+  margin: 2.2rem 0;
+  border: 1px solid black;
+  height: 4rem;
+  font-size: 2.3rem;
+  text-align: center;
+  line-height: 4rem;
+  cursor: pointer;
+  font-weight: 800;
+  background-color: rgba(255 255 255 / 0.5);
+  border-radius: 1rem;
+}
+.sidebar .chat:hover {
+  background-color: white;
+}
