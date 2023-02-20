@@ -40,3 +40,8 @@
 .sidebar .chat:hover {
   background-color: white;
 }
+@media only screen and (max-width: 720px) {
+  .sidebar {
+    --width: 30rem;
+  }
+}

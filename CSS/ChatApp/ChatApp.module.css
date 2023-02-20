@@ -1,5 +1,6 @@
 .main {
-  width: calc(100vw - 40rem - 4rem);
+  /* width: calc(100vw - 40rem - 4rem); */
+  flex-grow: 1;
   margin: 0 2rem;
   border-radius: 3rem;
   overflow: hidden;
@@ -25,7 +26,7 @@
   height: 3rem;
   font-size: 2rem;
   line-height: 2rem;
-  margin: 6px 0;
+  margin: 10px 0;
 }
 .main .chats .msgCont .msg .right {
   border: 1px solid black;
