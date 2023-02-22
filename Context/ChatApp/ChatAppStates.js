@@ -12,8 +12,8 @@ export default function ChatAppStates({ children }) {
   const [selectedChat, setSelectedChat] = useState("");
   const [refresh, setRefresh] = useState(false);
 
-  // const host = "https://nextportfolio-mu.vercel.app/";
-  const host = "http://localhost:3000/";
+  const host = "https://nextportfolio-mu.vercel.app/";
+  // const host = "http://localhost:3000/";
 
   useEffect(() => {
     if (localStorage.getItem("user") !== null) {

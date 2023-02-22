@@ -8,7 +8,8 @@ import Head from "next/head";
 export default function NotesContent({ query, name }) {
   const [content, setContent] = useState([]);
   const [note, setNote] = useState([]);
-  const host = "http://localhost:3000/";
+  // const host = "http://localhost:3000/";
+  const host = "https://nextportfolio-mu.vercel.app/";
   const titles = useRef();
 
   const getContent = async () => {
