@@ -1,0 +1,74 @@
+.navContainer {
+  --navBgColor: #8ff6ff;
+  --navFontColor: black;
+  --navFontSize: 2rem;
+  height: var(--navHeight);
+  width: 100vw;
+  background-color: var(--navBgColor);
+  color: var(--navFontColor);
+  box-shadow: 0 10px 14px -12px var(--navFontColor);
+  font-family: "Nunito", sans-serif;
+  z-index: 5;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: center;
+}
+.nav {
+  width: 100%;
+  max-width: 150rem;
+  padding: 2rem 6rem;
+  font-size: var(--navFontSize);
+  display: flex;
+  justify-content: space-between;
+}
+.nav * {
+  transition: all 0.2s linear;
+}
+.nav .logo {
+  cursor: pointer;
+  font-weight: bolder;
+}
+.nav .menus {
+  display: flex;
+}
+.nav .menus .items {
+  margin: 0 2rem;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 720px) {
+  .nav {
+    --navFontSize: 3.5rem;
+    padding: 3rem 4rem;
+  }
+}
+
+.nav .navMob {
+  height: calc(100vh - var(--navHeight));
+  width: 100%;
+  background-color: whitesmoke;
+  position: fixed;
+  top: -100vh;
+  left: 0;
+  opacity: 0;
+  z-index: -2;
+  padding: 2rem 6rem;
+  transition: all 0.5s cubic-bezier(0.2, -0.53, 0.8, 1.2);
+}
+.nav .navMob.active {
+  z-index: -2;
+  top: var(--navHeight);
+  opacity: 1;
+}
+.nav .navMob p {
+  font-size: 4rem;
+  margin: 2rem 0;
+  cursor: pointer;
+  padding: 7px 1.5rem;
+  border-bottom: 2px solid var(--navFontColor);
+  border-radius: 7px;
+}
+.nav .navMob p:hover {
+  background-color: white;
+}

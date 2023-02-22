@@ -1,0 +1,109 @@
+.mainContainer {
+  width: 100vw;
+  display: grid;
+  place-content: center;
+}
+.mainContainer .container {
+  max-width: 150rem;
+  padding: 2rem 6rem;
+  font-family: "Nunito", sans-serif;
+  width: 100%;
+}
+.mainContainer .container .noteContainer {
+  height: max-content;
+  margin-bottom: 5rem;
+}
+.mainContainer .container .noteContainer h1 {
+  font-size: 5rem;
+  font-variant: small-caps;
+}
+.mainContainer .container .noteContainer .notes {
+  display: grid;
+  grid-gap: 7rem;
+  background-color: #40aee646;
+  grid-template-columns: repeat(4, minmax(20rem, 1fr));
+  border-radius: 2rem;
+  padding: 2rem 3rem;
+}
+.mainContainer .container .noteContainer .notes .note {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 2rem;
+  cursor: pointer;
+  box-shadow: none;
+  translate: 0 0;
+  transition: box-shadow 0.3s linear, translate 0.2s linear;
+}
+.mainContainer .container .noteContainer:has(.disabled) .notes .note::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255 255 255 / 0.5);
+  border-radius: 2rem;
+}
+.mainContainer .container .noteContainer .notes .note:hover {
+  box-shadow: 5px 5px 14px -7px black;
+  translate: 0 -3px;
+}
+.mainContainer .container .noteContainer .notes.disabled .note {
+  cursor: auto;
+}
+.mainContainer .container .noteContainer .notes.disabled .note:hover {
+  translate: 0 0;
+  box-shadow: none;
+}
+.mainContainer .container .noteContainer .notes .note img {
+  width: auto;
+  height: 12rem;
+}
+.mainContainer .container .noteContainer .notes .note p {
+  padding: 2rem 3rem;
+  font-size: 1.35rem;
+  background-color: whitesmoke;
+  border-radius: 0 0 2rem 2rem;
+}
+
+@media only screen and (max-width: 1500px) {
+  .mainContainer .container .noteContainer .notes {
+    grid-template-columns: repeat(4, minmax(20rem, 1fr));
+  }
+}
+@media only screen and (max-width: 1500px) {
+  .mainContainer .container .noteContainer .notes {
+    grid-template-columns: repeat(3, minmax(25rem, 1fr));
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .mainContainer .container .noteContainer .notes {
+    grid-gap: 5rem;
+    grid-template-columns: repeat(4, minmax(15rem, 1fr));
+  }
+  .mainContainer .container .noteContainer .notes .note p {
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+  }
+  @media only screen and (max-width: 720px) {
+    .mainContainer .container .noteContainer .notes {
+      padding: 3rem;
+      grid-template-columns: repeat(3, minmax(20rem, 1fr));
+    }
+  }
+  .mainContainer .container .noteContainer .notes .note p {
+    padding: 1rem 2rem;
+    font-size: 1.7rem;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .mainContainer .container .noteContainer .notes {
+    grid-template-columns: repeat(2, minmax(17rem, 1fr));
+  }
+}
+@media only screen and (max-width: 420px) {
+  .mainContainer .container .noteContainer .notes {
+    width: calc(100vw - 10rem);
+    grid-template-columns: 100%;
+  }
+}

@@ -8,7 +8,7 @@
 }
 
 html {
-  font-size: 62.5%;
+  font-size: 70%;
   scroll-behavior: smooth;
 }
 a {
@@ -18,12 +18,12 @@ a {
 
 @media only screen and (max-width: 1500px) {
   html {
-    font-size: 64%;
+    font-size: 62.5%;
   }
 }
 @media only screen and (max-width: 1400px) {
   html {
-    font-size: 55%;
+    font-size: 57%;
   }
 }
 @media only screen and (max-width: 1024px) {
@@ -32,6 +32,9 @@ a {
   }
 }
 @media only screen and (max-width: 720px) {
+  :root {
+    --navHeight: 10rem;
+  }
   html {
     font-size: 40%;
   }
