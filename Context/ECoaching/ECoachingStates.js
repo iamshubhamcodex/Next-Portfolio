@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import { createContext, useEffect, useState } from "react";
+import host from "@/lib/var";
 
 export const ECoachingContext = createContext();
 
@@ -14,8 +15,6 @@ export default function ECoachingStates({ children }) {
     bool: false,
     msg: "Nothing Right Now",
   });
-  const host = "https://nextportfolio-mu.vercel.app/";
-  // const host = "http://localhost:3000/";
 
   useEffect(() => {
     if (Boolean(localStorage.getItem("loggedIn"))) setLogged(true);

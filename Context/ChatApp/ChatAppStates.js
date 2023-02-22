@@ -1,5 +1,6 @@
 // import { useRouter } from "next/router";
 import { createContext, useEffect, useState } from "react";
+import host from "@/lib/var";
 
 export const ChatAppContext = createContext();
 
@@ -11,9 +12,6 @@ export default function ChatAppStates({ children }) {
   const [allChats, setAllChats] = useState([]);
   const [selectedChat, setSelectedChat] = useState("");
   const [refresh, setRefresh] = useState(false);
-
-  const host = "https://nextportfolio-mu.vercel.app/";
-  // const host = "http://localhost:3000/";
 
   useEffect(() => {
     if (localStorage.getItem("user") !== null) {

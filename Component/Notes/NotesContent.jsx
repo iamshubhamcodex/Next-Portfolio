@@ -4,13 +4,11 @@ import { useEffect, useRef, useState } from "react";
 import Prism from "prismjs";
 import "prismjs/components/prism-jsx";
 import Head from "next/head";
+import host from "@/lib/var";
 
 export default function NotesContent({ query, name }) {
   const [content, setContent] = useState([]);
   const [note, setNote] = useState([]);
-  // const host = "http://localhost:3000/";
-  const host = "https://nextportfolio-mu.vercel.app/";
-  const titles = useRef();
 
   const getContent = async () => {
     let response = await fetch(`${host}api/Notes/getContent`, {
