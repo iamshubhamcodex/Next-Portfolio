@@ -1,8 +1,14 @@
-import styles from "@/CSS/PassManager/PassManagerHome.module.css";
-import data from "@/lib/data.json";
+import PassManagerHome from "@/Component/PassManage/PassManagerHome";
+import PassManagerNavbar from "@/Component/PassManage/PassManagerNavbar";
+import Head from "next/head";
 import { useState } from "react";
+import { useContext } from "react";
+import { PassManagerContext } from "@/Context/ChatApp/PassManager/PassManagerStates";
+import PassManagerLogin from "@/Component/PassManage/PassManagerLogin";
+import PassManagerRegistration from "@/Component/PassManage/PassManagerRegistration";
 
 export default function PassManager() {
+  let { setLogin, login, regis, setRegis } = useContext(PassManagerContext);
   const [copied, setCopied] = useState(false);
 
   const copyContent = async (text, dom) => {
@@ -10,56 +16,21 @@ export default function PassManager() {
     setTimeout(() => setCopied(false), 1500);
     try {
       await navigator.clipboard.writeText(text);
-      console.log("Content copied to clipboard");
     } catch (err) {
       console.error("Failed to copy: ", err);
     }
   };
 
-  function Card({ obj }) {
-    let objArr = Object.keys(obj.detail);
-    return (
-      <>
-        <div className={styles.card}>
-          <div className={styles.title}>{obj.title}</div>
-          <table>
-            <tbody>
-              {objArr.map((key, id) => {
-                return (
-                  <tr key={id}>
-                    <td>{key}:</td>
-                    <td>{obj.detail[key]}</td>
-                    <td
-                      className={styles.copy}
-                      onClick={() => copyContent(obj.detail[key])}
-                    >
-                      COPY
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
-          <div className={styles.delete}>DELETE</div>
-        </div>
-      </>
-    );
-  }
-
   return (
-    <div className={styles.home}>
-      {data.map((key, id) => {
-        return <Card key={id} obj={key} />;
-      })}
-      {
-        <div
-          className={
-            copied ? `${styles.active} ${styles.copied}` : `${styles.copied}`
-          }
-        >
-          COPIED
-        </div>
-      }
-    </div>
+    <>
+      <Head>
+        <title>PassManager | Projects</title>
+      </Head>
+      <PassManagerNavbar />
+      {/* if(!logged){} */}
+      <PassManagerHome />
+      <PassManagerLogin login={login} close={setLogin} />
+      <PassManagerRegistration regis={regis} close={setRegis} />
+    </>
   );
 }

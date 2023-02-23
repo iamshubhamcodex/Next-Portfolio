@@ -1,0 +1,32 @@
+.container {
+  height: 5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #0e353d;
+  font-size: 1.7rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.container .nav {
+  max-width: 150rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4rem;
+}
+.container .nav .logo {
+  font-weight: bold;
+  color: wheat;
+}
+.container .nav .logreg {
+  display: flex;
+}
+.container .nav .logreg .login,
+.container .nav .logreg .regis {
+  color: #ddffbc;
+  margin: 0 1rem;
+  cursor: pointer;
+  user-select: none;
+}
