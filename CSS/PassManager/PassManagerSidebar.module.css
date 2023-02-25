@@ -1,0 +1,130 @@
+.container {
+  --sidebarWidth: 30rem;
+  position: relative;
+  overflow: hidden;
+  min-width: var(--sidebarWidth);
+  width: var(--sidebarWidth);
+  transition: all 0.4s cubic-bezier(0.3, -0.5, 0.8, 1.5);
+}
+.container.short {
+  min-width: 5.5rem;
+  width: 5.5rem;
+}
+.sidebar {
+  width: var(--sidebarWidth);
+  height: 100vh;
+  background-color: #0e353d;
+}
+.sidebar * {
+  color: #ddffbc;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.sidebar .search {
+  width: var(--sidebarWidth);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid grey;
+  margin-bottom: 2rem;
+}
+.sidebar .search .i {
+  min-height: 100%;
+  min-width: 5rem;
+}
+.sidebar .search svg {
+  margin: 0 1.5rem;
+  cursor: pointer;
+}
+.sidebar .search input {
+  flex-grow: 1;
+  padding: 2rem 0rem;
+  height: 100%;
+  font-size: 1.5rem;
+  outline: none;
+  border: none;
+  background-color: #0e353d;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: wheat;
+}
+.sidebar .ids {
+  padding: 1rem 2rem;
+  margin: 1.75rem 0;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+}
+.sidebar .ids svg {
+  margin-right: 1.75rem;
+  height: 1.75rem;
+  display: inline-block;
+}
+.sidebar .ids:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.sidebar .ids p {
+  flex-grow: 1;
+  font-size: 1.25rem;
+}
+
+@media only screen and (max-width: 1024px) {
+  .container {
+    --sidebarWidth: 40rem;
+  }
+  .container.short {
+    min-width: 7rem;
+  }
+  .sidebar .search {
+    padding: 0rem 1.8rem;
+  }
+  .sidebar .search .i {
+    min-width: 5rem;
+  }
+  .sidebar .search input {
+    width: 22rem;
+    padding: 2rem 2rem;
+    margin-right: 2rem;
+    font-size: 2.5rem;
+  }
+  .sidebar .ids {
+    padding: 1.5rem 2.5rem;
+    margin: 2.5rem 0;
+  }
+  .sidebar .ids p {
+    font-size: 2.4rem;
+  }
+  .sidebar .ids svg {
+    margin-right: 3rem;
+    height: 2.5rem;
+  }
+}
+@media only screen and (max-width: 720px) {
+  .container {
+    --sidebarWidth: 40rem;
+  }
+  .container.short {
+    min-width: 9.7rem;
+  }
+  .sidebar .search {
+    padding: 0rem 2.5rem;
+  }
+  .sidebar .search .i {
+    min-width: 6rem;
+  }
+  .sidebar .search input {
+    width: 15rem;
+    padding: 2rem 2rem;
+    margin-right: 2rem;
+    font-size: 3rem;
+  }
+  .sidebar .ids {
+    padding: 2rem 4rem;
+    margin: 3rem 0;
+  }
+  .sidebar .ids p {
+    font-size: 3rem;
+  }
+  .sidebar .ids svg {
+    margin-right: 3rem;
+    height: 3rem;
+  }
+}

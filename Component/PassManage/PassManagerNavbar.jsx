@@ -1,7 +1,7 @@
 import styles from "@/CSS/PassManager/PassManagerNavbar.module.css";
 import Link from "next/link";
 import { useContext } from "react";
-import { PassManagerContext } from "@/Context/ChatApp/PassManager/PassManagerStates";
+import { PassManagerContext } from "@/Context/PassManager/PassManagerStates";
 
 export default function PassManagerNavbar() {
   let { setLogin, login, regis, setRegis } = useContext(PassManagerContext);

@@ -21,34 +21,6 @@ export default function NotesMain() {
                 guide
               </p>
             </Link>
-            {/* <div className={styles.note}>
-              <Image src={JSImage} alt="JavaScript" />
-              <p>
-                Learn JavaScript from Scratch. Also build awesome project with
-                the guide
-              </p>
-            </div>
-            <div className={styles.note}>
-              <Image src={JSImage} alt="JavaScript" />
-              <p>
-                Learn JavaScript from Scratch. Also build awesome project with
-                the guide
-              </p>
-            </div>
-            <div className={styles.note}>
-              <Image src={JSImage} alt="JavaScript" />
-              <p>
-                Learn JavaScript from Scratch. Also build awesome project with
-                the guide
-              </p>
-            </div>
-            <div className={styles.note}>
-              <Image src={JSImage} alt="JavaScript" />
-              <p>
-                Learn JavaScript from Scratch. Also build awesome project with
-                the guide
-              </p>
-            </div> */}
           </div>
         </div>
         <div className={styles.noteContainer}>

@@ -1,6 +1,15 @@
+import { PassManagerContext } from "@/Context/PassManager/PassManagerStates";
 import styles from "@/CSS/PassManager/PassManagerLogin.module.css";
+import { useContext } from "react";
 
 export default function PassManageLogin({ login, close }) {
+  let { setLogged } = useContext(PassManagerContext);
+
+  const loginUser = (e) => {
+    e.preventDefault();
+    setLogged(true);
+  };
+
   let cls = login ? styles.active : "";
   return (
     <>
@@ -10,17 +19,17 @@ export default function PassManageLogin({ login, close }) {
       ></div>
       <div className={`${styles.form} ${cls}`}>
         <h1>Login Please</h1>
-        <form>
+        <form onSubmit={loginUser}>
           <div className={styles.inp}>
-            <label htmlFor="email">Email Address</label>
-            <input placeholder="Type your Email" type="email" id="email" />
+            <label htmlFor="lemail">Email Address</label>
+            <input placeholder="Type your Email" type="email" id="lemail" />
           </div>
           <div className={styles.inp}>
-            <label htmlFor="passw">Password</label>
+            <label htmlFor="lpassw">Password</label>
             <input
               placeholder="Type your Password"
               type="password"
-              id="passw"
+              id="lpassw"
             />
           </div>
           <div className={styles.inp_check}>

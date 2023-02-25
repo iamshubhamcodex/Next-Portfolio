@@ -1,6 +1,6 @@
 import styles from "@/CSS/Notes/NotesContent.module.css";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Prism from "prismjs";
 import "prismjs/components/prism-jsx";
 import Head from "next/head";
@@ -30,43 +30,55 @@ export default function NotesContent({ query, name }) {
     if (data.success) setNote(data.note[0]);
   };
 
-  function getPara(val) {
+  function getPara(val, key) {
     let component;
     switch (val.texttype) {
       case "head1":
-        component = <h2>{val.content}</h2>;
+        component = <h2 key={key}>{val.content}</h2>;
         break;
       case "head2":
-        component = <h3>{val.content}</h3>;
+        component = <h3 key={key}>{val.content}</h3>;
         break;
       case "head3":
         component = (
-          <p className={`${styles.para} ${styles.bold}`}>{val.content}</p>
+          <p key={key} className={`${styles.para} ${styles.bold}`}>
+            {val.content}
+          </p>
         );
         break;
       case "para":
-        component = <p className={styles.para}>{val.content}</p>;
+        component = (
+          <p key={key} className={styles.para}>
+            {val.content}
+          </p>
+        );
         break;
       case "code":
         component = (
-          <pre>
-            <code class="language-jsx">{val.content}</code>
+          <pre key={key}>
+            <code className="language-jsx">{val.content}</code>
           </pre>
         );
         break;
       case "list":
         let arr = val.content.split("_");
         component = (
-          <ol>
-            {arr.map((k) => {
-              return <li className={styles.para}>{k}</li>;
+          <ol key={key}>
+            {arr.map((k, i) => {
+              return (
+                <li key={i} className={styles.para}>
+                  {k}
+                </li>
+              );
             })}{" "}
           </ol>
         );
         break;
       case "warning":
         component = (
-          <p className={`${styles.para} ${styles.warn}`}>{val.content}</p>
+          <p key={key} className={`${styles.para} ${styles.warn}`}>
+            {val.content}
+          </p>
         );
     }
     return component;
@@ -76,9 +88,13 @@ export default function NotesContent({ query, name }) {
     await Prism.highlightAll();
   };
   useEffect(() => {
-    getContent();
-    getNote();
-    highlight();
+    if (query) {
+      getContent();
+      getNote();
+    }
+    (async () => {
+      await highlight();
+    })();
   }, [query]);
 
   return (

@@ -26,7 +26,21 @@
 .container .nav .logreg .login,
 .container .nav .logreg .regis {
   color: #ddffbc;
+  font-size: 2rem;
   margin: 0 1rem;
   cursor: pointer;
   user-select: none;
+}
+
+@media only screen and (max-width: 720px) {
+  .container {
+    height: 7rem;
+  }
+  .container .nav .logo {
+    font-size: 4rem;
+  }
+  .container .nav .logreg .login,
+  .container .nav .logreg .regis {
+    font-size: 3rem;
+  }
 }
