@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { PassManagerContext } from "@/Context/PassManager/PassManagerStates";
 
 export default function PassManagerMain({ setLogged }) {
-  let { smMob } = useContext(PassManagerContext);
+  let { smMob, text } = useContext(PassManagerContext);
   return (
     <>
       <div className={styles.main}>
@@ -15,6 +15,7 @@ export default function PassManagerMain({ setLogged }) {
               </svg>
               <p>Add New</p>
             </div>
+            <p style={{ fontSize: "2rem" }}>{text}</p>
           </div>
           <div className={styles.profiles}>
             <p className={styles.profile} onClick={() => setLogged(false)}>

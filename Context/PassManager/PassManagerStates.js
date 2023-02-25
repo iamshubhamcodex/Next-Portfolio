@@ -8,10 +8,12 @@ export default function PassManagerStates({ children }) {
   const [logged, setLogged] = useState(false);
   const [mob, setMob] = useState(false);
   const [smMob, setSmMob] = useState(false);
+  const [text, setText] = useState("");
 
   const setIsMob = () => {
     setMob(window.innerWidth < 720);
     setSmMob(window.innerWidth < 480);
+    setText(window.innerWidth);
   };
 
   useEffect(
@@ -33,6 +35,7 @@ export default function PassManagerStates({ children }) {
         setLogged,
         mob,
         smMob,
+        text,
       }}
     >
       {children}
