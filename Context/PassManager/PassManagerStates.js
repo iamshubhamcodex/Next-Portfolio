@@ -7,9 +7,11 @@ export default function PassManagerStates({ children }) {
   const [regis, setRegis] = useState(false);
   const [logged, setLogged] = useState(false);
   const [mob, setMob] = useState(false);
+  const [smMob, setSmMob] = useState(false);
 
   const setIsMob = () => {
     setMob(window.innerWidth < 720);
+    setSmMob(window.innerWidth < 480);
   };
 
   useEffect(
@@ -22,7 +24,16 @@ export default function PassManagerStates({ children }) {
 
   return (
     <PassManagerContext.Provider
-      value={{ login, setLogin, regis, setRegis, logged, setLogged, mob }}
+      value={{
+        login,
+        setLogin,
+        regis,
+        setRegis,
+        logged,
+        setLogged,
+        mob,
+        smMob,
+      }}
     >
       {children}
     </PassManagerContext.Provider>

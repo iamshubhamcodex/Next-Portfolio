@@ -1,5 +1,9 @@
 import styles from "@/CSS/PassManager/PassManagerMain.module.css";
+import { useContext } from "react";
+import { PassManagerContext } from "@/Context/PassManager/PassManagerStates";
+
 export default function PassManagerMain({ setLogged }) {
+  let { smMob } = useContext(PassManagerContext);
   return (
     <>
       <div className={styles.main}>
@@ -21,8 +25,12 @@ export default function PassManagerMain({ setLogged }) {
         <div className={styles.wrapper}>
           <div className={styles.header}>
             <div className={styles.name}>Item Name</div>
-            <div className={styles.lastu}>Last Used</div>
-            <div className={styles.category}>Category</div>
+            {!smMob && (
+              <>
+                <div className={styles.lastu}>Last Used</div>
+                <div className={styles.category}>Category</div>
+              </>
+            )}
           </div>
           <div className={styles.hr}></div>
           <div className={styles.items}>
@@ -36,8 +44,12 @@ export default function PassManagerMain({ setLogged }) {
                   </div>
                 </div>
               </div>
-              <div className={styles.lastu}>Not Used</div>
-              <div className={styles.category}>No Category</div>
+              {!smMob && (
+                <>
+                  <div className={styles.lastu}>Not Used</div>
+                  <div className={styles.category}>No Category</div>
+                </>
+              )}
             </div>
             <div className={styles.item}>
               <div className={styles.item_name}>
@@ -49,8 +61,12 @@ export default function PassManagerMain({ setLogged }) {
                   </div>
                 </div>
               </div>
-              <div className={styles.lastu}>Not Used</div>
-              <div className={styles.category}>No Category</div>
+              {!smMob && (
+                <>
+                  <div className={styles.lastu}>Not Used</div>
+                  <div className={styles.category}>No Category</div>{" "}
+                </>
+              )}
             </div>
           </div>
         </div>

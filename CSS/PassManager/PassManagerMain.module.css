@@ -163,9 +163,6 @@
   .main .wrapper .items .item {
     padding: 2rem 3rem;
   }
-  .main .wrapper .items .item .item_name {
-    overflow: hidden;
-  }
   .main .wrapper .items .item .item_name .details .name {
     font-size: 2.5rem;
   }
@@ -240,8 +237,15 @@
 }
 @media only screen and (max-width: 480px) {
   .main .wrapper {
-    --name: 60% !important;
-    --lastu: 20% !important;
-    --category: 20% !important;
+    --name: 100% !important;
+  }
+  .main header .adds .add {
+    padding: 1.5rem 1.5rem;
+  }
+  .main header .adds .add svg {
+    width: 17px;
+  }
+  .main header .adds .add p {
+    font-size: 2rem;
   }
 }

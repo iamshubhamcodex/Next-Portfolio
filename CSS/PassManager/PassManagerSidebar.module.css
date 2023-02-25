@@ -4,6 +4,7 @@
   overflow: hidden;
   min-width: var(--sidebarWidth);
   width: var(--sidebarWidth);
+  height: 100vh;
   transition: all 0.4s cubic-bezier(0.3, -0.5, 0.8, 1.5);
 }
 .container.short {
