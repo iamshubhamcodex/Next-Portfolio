@@ -1,6 +1,9 @@
 import styles from "@/CSS/PassManager/PassManagerLogin.module.css";
+import { PassManagerContext } from "@/Context/PassManager/PassManagerStates";
+import { useContext } from "react";
 
 export default function PassManageRegistration({ regis, close }) {
+  let { setRegis } = useContext(PassManagerContext);
   let cls = regis ? styles.active : "";
   return (
     <>
@@ -36,7 +39,9 @@ export default function PassManageRegistration({ regis, close }) {
             />
           </div>
           <div className={styles.btns}>
-            <button type="reset">Cancel</button>
+            <button type="reset" onClick={() => setRegis(false)}>
+              Cancel
+            </button>
             <button type="submit">Submit</button>
           </div>
         </form>

@@ -3,7 +3,7 @@ import styles from "@/CSS/PassManager/PassManagerLogin.module.css";
 import { useContext } from "react";
 
 export default function PassManageLogin({ login, close }) {
-  let { setLogged } = useContext(PassManagerContext);
+  let { setLogged, setLogin } = useContext(PassManagerContext);
 
   const loginUser = (e) => {
     e.preventDefault();
@@ -37,7 +37,9 @@ export default function PassManageLogin({ login, close }) {
             <label htmlFor="remember">Login Me for 24 hours</label>
           </div>
           <div className={styles.btns}>
-            <button type="reset">Cancel</button>
+            <button type="reset" onClick={() => setLogin(false)}>
+              Cancel
+            </button>
             <button type="submit">Submit</button>
           </div>
         </form>
