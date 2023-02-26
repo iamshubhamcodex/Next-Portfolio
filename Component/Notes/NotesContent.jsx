@@ -5,15 +5,15 @@ import Prism from "prismjs";
 import "prismjs/components/prism-jsx";
 import Head from "next/head";
 import host from "@/lib/var";
+import Image from "next/image";
 
 export default function NotesContent({ query, name }) {
   const [content, setContent] = useState([]);
   const [note, setNote] = useState();
   const [href, setHref] = useState();
-  let download = useRef();
 
   const getPdf = async (val) => {
-    let response = await fetch(`${host}api/Notes/download`, {
+    let response = await fetch(`${host}api/lib/download`, {
       method: "POST",
       body: JSON.stringify({
         name: val,
@@ -22,8 +22,7 @@ export default function NotesContent({ query, name }) {
       headers: { Accept: "*/*", "Content-type": "application-json" },
     });
     let data = await response.json();
-    setHref(data.path);
-    console.log("downloading");
+    if (data.success) setHref(data.path);
   };
 
   const getContent = async () => {
@@ -33,7 +32,8 @@ export default function NotesContent({ query, name }) {
       headers: { Accept: "*/*", "Content-Type": "application-json" },
     });
     let data = await response.json();
-    if (data.success && data.content) setContent(data.content[0].contents);
+    if (data.success && data.content && data.content[0])
+      setContent(data.content[0].contents);
   };
 
   const getNote = async () => {
@@ -95,6 +95,13 @@ export default function NotesContent({ query, name }) {
           <p key={key} className={`${styles.para} ${styles.warn}`}>
             {val.content}
           </p>
+        );
+        break;
+      case "image":
+        component = (
+          <div className={styles.image}>
+            <Image height={"150"} width="200" src={val.content} alt="" />
+          </div>
         );
     }
     return component;

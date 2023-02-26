@@ -1,7 +1,8 @@
 import styles from "@/CSS/PassManager/PassManageMPasPin.module.css";
 import { useRef, useState } from "react";
 
-export default function PassManageMPasPin({ setMPass, content }) {
+export default function PassManageMPasPin({ setMPass, mPass }) {
+  let { content, error } = mPass;
   let mpass = useRef();
   const [showPass, setShowPass] = useState(false);
 
@@ -30,6 +31,9 @@ export default function PassManageMPasPin({ setMPass, content }) {
             )}
           </div>
         </div>
+        {error !== "" && (
+          <p style={{ marginTop: "-3rem", color: "red" }}>{error}</p>
+        )}
         <button
           onClick={() => {
             setMPass(mpass.current.value);

@@ -8,7 +8,7 @@ export default async function handler(req, res) {
 
   if (method === "POST") {
     if (!fs.existsSync("public" + path)) {
-      const page = await puPage;
+      const { browser, page } = await puPage;
 
       let st = await page.goto(body.url, { waitUntil: "networkidle0" });
       let status = st.status();
@@ -23,6 +23,6 @@ export default async function handler(req, res) {
       await browser.close();
       console.log("file saved");
     }
-    res.json({ success: false, path: path });
+    res.json({ success: true, path: path });
   } else res.json({ for: "downloading pdf" });
 }

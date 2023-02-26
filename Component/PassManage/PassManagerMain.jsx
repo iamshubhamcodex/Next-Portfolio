@@ -18,9 +18,15 @@ export default function PassManagerMain({ setLogged }) {
             <p style={{ fontSize: "2rem" }}>{text}</p>
           </div>
           <div className={styles.profiles}>
-            <p className={styles.profile} onClick={() => setLogged(false)}>
+            <a
+              href=""
+              className={styles.profile}
+              onClick={() => {
+                window.localStorage.removeItem("userPass");
+              }}
+            >
               LogOut
-            </p>
+            </a>
           </div>
         </header>
         <div className={styles.wrapper}>
@@ -65,7 +71,7 @@ export default function PassManagerMain({ setLogged }) {
               {!smMob && (
                 <>
                   <div className={styles.lastu}>Not Used</div>
-                  <div className={styles.category}>No Category</div>{" "}
+                  <div className={styles.category}>No Category</div>
                 </>
               )}
             </div>

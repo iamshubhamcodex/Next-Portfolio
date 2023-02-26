@@ -50,6 +50,7 @@
   border: 2px solid grey !important;
   border-radius: 7px;
   font-size: 1.3rem;
+  margin: 2rem 0;
 }
 .container .contContainer .content .blog pre code {
   white-space: pre-wrap;
@@ -59,6 +60,13 @@
   border: 1px solid yellow;
   padding: 5px 7px;
   border-radius: 3px;
+}
+.container .contContainer .content .blog .image {
+  width: 100%;
+}
+.container .contContainer .content .blog .image img {
+  height: auto;
+  width: 90%;
 }
 .container .contContainer .content .download {
   margin: 2rem;

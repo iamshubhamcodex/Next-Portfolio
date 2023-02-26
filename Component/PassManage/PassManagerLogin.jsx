@@ -1,13 +1,18 @@
 import { PassManagerContext } from "@/Context/PassManager/PassManagerStates";
 import styles from "@/CSS/PassManager/PassManagerLogin.module.css";
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 
 export default function PassManageLogin({ login, close }) {
-  let { setLogged, setLogin } = useContext(PassManagerContext);
+  let { setLogged, setLogin, validateUser } = useContext(PassManagerContext);
+  const Lemail = useRef();
+  const Lpass = useRef();
 
   const loginUser = (e) => {
     e.preventDefault();
-    setLogged(true);
+    validateUser({
+      email: Lemail.current.value,
+      password: Lpass.current.value,
+    });
   };
 
   let cls = login ? styles.active : "";
@@ -22,11 +27,17 @@ export default function PassManageLogin({ login, close }) {
         <form onSubmit={loginUser}>
           <div className={styles.inp}>
             <label htmlFor="lemail">Email Address</label>
-            <input placeholder="Type your Email" type="email" id="lemail" />
+            <input
+              ref={Lemail}
+              placeholder="Type your Email"
+              type="email"
+              id="lemail"
+            />
           </div>
           <div className={styles.inp}>
             <label htmlFor="lpassw">Password</label>
             <input
+              ref={Lpass}
               placeholder="Type your Password"
               type="password"
               id="lpassw"
