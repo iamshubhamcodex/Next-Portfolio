@@ -13,11 +13,11 @@ export default function NotesContent({ query, name }) {
   let download = useRef();
 
   const getPdf = async (val) => {
-    let response = await fetch("http://localhost:3000/api/Notes/download", {
+    let response = await fetch(`${host}api/Notes/download`, {
       method: "POST",
       body: JSON.stringify({
         name: val,
-        url: `http://localhost:3000/Projects/Notes/${name}/${val}`,
+        url: `${host}Projects/Notes/${name}/${val}`,
       }),
       headers: { Accept: "*/*", "Content-type": "application-json" },
     });
