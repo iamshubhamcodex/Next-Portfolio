@@ -14,6 +14,12 @@ export default function PassManager() {
   let { setLogin, login, regis, setRegis, logged, setLogged } =
     useContext(PassManagerContext);
   const [showMPass, setShowMPass] = useState(true);
+  const [validMPass, setValidMPass] = useState(false);
+
+  const validateMPass = (val) => {
+    // check val of mPass and then return something
+    setValidMPass(true);
+  };
 
   const copyContent = async (text, dom) => {
     setCopied(true);
@@ -39,22 +45,33 @@ export default function PassManager() {
           <PassManagerRegistration regis={regis} close={setRegis} />
         </>
       )}
+      {logged && showMPass && (
+        <PassManageMPasPin
+          setMPass={(val) => {
+            setShowMPass(false);
+            validateMPass(val);
+          }}
+          content={{
+            title: "Create a Master Password",
+            text: "Master Password is required for your Security",
+          }}
+        />
+      )}
       {logged && (
-        <div style={{ display: "flex" }}>
-          {showMPass && (
-            <PassManageMPasPin
-              setMPass={(val) => {
-                console.log(val);
-                setShowMPass(false);
-              }}
-              content={{
-                title: "Create a Master Password",
-                text: "Master Password is required for your Security",
-              }}
-            />
+        <div
+          style={{
+            position: "relative",
+            width: "100vw",
+            overflowY: "hidden",
+            display: "flex",
+          }}
+        >
+          {validMPass && (
+            <>
+              <PassManageSidebar />
+              <PassManagerMain setLogged={setLogged} />
+            </>
           )}
-          <PassManageSidebar />
-          <PassManagerMain setLogged={setLogged} />
         </div>
       )}
     </>

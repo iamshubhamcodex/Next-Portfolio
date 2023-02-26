@@ -4,7 +4,7 @@
   place-content: center;
 }
 .container .contContainer {
-  width: 100%;
+  width: 100vw;
   max-width: 150rem;
   padding: 4rem 6rem;
   display: flex;
@@ -49,13 +49,32 @@
   padding: 7px 1.2rem;
   border: 2px solid grey !important;
   border-radius: 7px;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+}
+.container .contContainer .content .blog pre code {
+  white-space: pre-wrap;
 }
 .container .contContainer .content .blog .warn {
   background-color: rgba(255, 255, 0, 0.8);
   border: 1px solid yellow;
   padding: 5px 7px;
   border-radius: 3px;
+}
+.container .contContainer .content .download {
+  margin: 2rem;
+  padding: 1.2rem 2rem;
+  background-color: #343434;
+  color: white;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.container .contContainer .content .download a {
+  font-weight: 800;
+  letter-spacing: 1.2px;
+
+  color: white;
 }
 .container .contContainer .toc {
   position: sticky;
@@ -116,9 +135,10 @@
   .container .contContainer .content .blog h2 {
     font-size: 3.5rem;
   }
-  /* .container .contContainer .content .blog .bold {
-    font-size: 3rem;
-  } */
+  .container .contContainer .content .blog pre {
+    font-size: 2rem;
+  }
+
   .container .contContainer .content .blog h3 {
     font-size: 3.3rem;
   }

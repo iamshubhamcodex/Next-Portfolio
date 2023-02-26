@@ -1,6 +1,6 @@
 import styles from "@/CSS/Notes/NotesContent.module.css";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Prism from "prismjs";
 import "prismjs/components/prism-jsx";
 import Head from "next/head";
@@ -8,7 +8,23 @@ import host from "@/lib/var";
 
 export default function NotesContent({ query, name }) {
   const [content, setContent] = useState([]);
-  const [note, setNote] = useState([]);
+  const [note, setNote] = useState();
+  const [href, setHref] = useState();
+  let download = useRef();
+
+  const getPdf = async (val) => {
+    let response = await fetch("http://localhost:3000/api/Notes/download", {
+      method: "POST",
+      body: JSON.stringify({
+        name: val,
+        url: `http://localhost:3000/Projects/Notes/${name}/${val}`,
+      }),
+      headers: { Accept: "*/*", "Content-type": "application-json" },
+    });
+    let data = await response.json();
+    setHref(data.path);
+    console.log("downloading");
+  };
 
   const getContent = async () => {
     let response = await fetch(`${host}api/Notes/getContent`, {
@@ -92,26 +108,39 @@ export default function NotesContent({ query, name }) {
       getContent();
       getNote();
     }
-    (async () => {
-      await highlight();
-    })();
   }, [query]);
 
+  useEffect(() => {
+    if (note) highlight();
+  }, [note]);
   return (
     <>
       <Head>
-        <title>{note.heading} | React</title>
+        <title>{note?.heading} | React</title>
       </Head>
       <div className={styles.container}>
         <div className={styles.contContainer}>
           <div className={styles.content}>
-            <h1>{note.heading}</h1>
+            <h1>{note?.heading}</h1>
             <div className={styles.blog}>
-              {note.contents &&
-                note.contents.map((k, i) => {
+              {note?.contents &&
+                note?.contents.map((k, i) => {
                   return getPara(k, i);
                 })}
             </div>
+            {note && (
+              <button
+                className={styles.download}
+                onClick={() => getPdf(note.name)}
+              >
+                {!href && "Get Download Link"}
+                {href && (
+                  <a download href={href}>
+                    Download
+                  </a>
+                )}
+              </button>
+            )}
           </div>
           <div className={styles.toc}>
             <h2>Table of Content</h2>
