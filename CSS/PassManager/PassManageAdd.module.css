@@ -1,0 +1,131 @@
+.container .back {
+  inset: 0;
+  position: absolute;
+  z-index: 5;
+  background-color: rgba(0 0 0/ 0.3);
+}
+.container .addPage {
+  position: absolute;
+  height: 100vh;
+  width: 70rem;
+  background-color: white;
+  right: -70rem;
+  transition: all 0.35s cubic-bezier(0.2, 0.5, 0.7, 0.9);
+  z-index: 6;
+}
+.container .addPage.active {
+  right: 0rem;
+}
+.container .addPage .header {
+  padding: 2rem 8rem;
+  font-size: 6rem;
+  line-height: 20rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 500;
+  background-color: rgb(218, 218, 218);
+}
+.container .addPage .body {
+  padding: 4rem 7rem;
+  height: calc(100vh - 25rem - 10rem);
+}
+.container .addPage .body .inp {
+  width: 100%;
+  height: 6rem;
+  margin: 3rem 0;
+  display: flex;
+  align-items: center;
+}
+.container .addPage .body .inp:hover .input {
+  border: 2px solid grey;
+}
+.container .addPage .body .inp label {
+  width: 30%;
+  text-align: right;
+  margin: 0 3rem 0 0;
+  font-size: 2.4rem;
+  font-weight: 600;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  /* border: 1px solid black; */
+}
+.container .addPage .body .inp .input {
+  width: 90%;
+  height: 100%;
+  padding: 0 2rem;
+  font-size: 2.2rem;
+  display: flex;
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  outline: none;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  overflow-x: scroll;
+}
+.container .addPage .body .inp .input::-webkit-scrollbar {
+  display: none;
+}
+.container .addPage .body .inp .input:focus,
+.container .addPage .body .inp .input:active {
+  border: 1px solid grey;
+}
+.container .addPage .btns {
+  background-color: rgb(243, 243, 243);
+  height: 10rem;
+  padding: 0 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.container .addPage .btns p {
+  padding: 1rem 2rem;
+  font-size: 2.5rem;
+  margin: 0 1rem;
+  border-radius: 7px;
+  font-weight: 800;
+  font-family: cursive;
+  cursor: pointer;
+}
+.container .addPage .btns p:first-child {
+  background-color: #0f272ce3;
+  color: white;
+}
+.container .addPage .btns p:last-child {
+  background-color: rgba(0 0 0/ 0.3);
+}
+
+@media only screen and (max-width: 720px) {
+  .container .addPage {
+    width: 90rem;
+    right: -90rem;
+  }
+  .container .addPage .body .inp label {
+    font-size: 3.5rem;
+  }
+  .container .addPage .body .inp .input {
+    font-size: 3rem;
+    width: 80%;
+  }
+  .container .addPage .btns p {
+    font-size: 3.5rem;
+  }
+}
+
+.copy {
+  position: absolute;
+  bottom: -5rem;
+  left: 50%;
+  translate: -50% 0;
+  padding: 1rem 2rem;
+  border-radius: 7px;
+  background-color: #19463ae3;
+  color: white;
+  font-size: 2rem;
+  font-weight: 600;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  transition: bottom 0.3s cubic-bezier(0.3, 0.7, 0.4, 0.9);
+}
+.copy.active {
+  bottom: 5rem;
+}

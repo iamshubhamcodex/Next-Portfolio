@@ -74,15 +74,7 @@ export default function PassManager() {
       });
     }
   };
-  const copyContent = async (text, dom) => {
-    setCopied(true);
-    setTimeout(() => setCopied(false), 1500);
-    try {
-      await navigator.clipboard.writeText(text);
-    } catch (err) {
-      console.error("Failed to copy: ", err);
-    }
-  };
+
   useEffect(() => {
     let temp = window.localStorage.getItem("userPass");
     if (temp && temp !== "undefined") {
@@ -117,7 +109,7 @@ export default function PassManager() {
           style={{
             position: "relative",
             width: "100vw",
-            overflowY: "hidden",
+            overflow: "hidden",
             display: "flex",
           }}
         >

@@ -1,5 +1,4 @@
 import host from "@/lib/var";
-import { useRouter } from "next/router";
 
 const { createContext, useState, useEffect } = require("react");
 
@@ -12,12 +11,12 @@ export default function PassManagerStates({ children }) {
   const [userDetails, setUserDetails] = useState();
   const [mob, setMob] = useState(false);
   const [smMob, setSmMob] = useState(false);
-  const [text, setText] = useState("");
+  const [selected, setSelected] = useState("Logins");
+  const [cred, setCred] = useState();
 
   const setIsMob = () => {
     setMob(window.innerWidth < 720);
     setSmMob(window.innerWidth < 480);
-    setText(window.innerWidth);
   };
 
   const validateUser = async (body) => {
@@ -27,7 +26,6 @@ export default function PassManagerStates({ children }) {
       headers: { Accept: "*/*", "Content-Type": "application.json" },
     });
     let data = await response.json();
-    // console.log(data);
     if (data.success) {
       setUserDetails(data.user);
       setLogged(true);
@@ -42,8 +40,8 @@ export default function PassManagerStates({ children }) {
     });
     let data = await response.json();
     if (data.success) {
-      setLogin(false);
-      setRegis(true);
+      setLogin(true);
+      setRegis(false);
     }
   };
   const updateUser = async (body) => {
@@ -55,6 +53,18 @@ export default function PassManagerStates({ children }) {
           what: body.what,
           set: { mpass: body.mpass },
         };
+        break;
+      case "logins":
+      case "generals":
+      case "ids":
+      case "notes":
+        JSONbody = {
+          email: userDetails.email,
+          what: body.what,
+          set: {},
+          // set: { logins: body[body.what] },
+        };
+        JSONbody.set[body.what] = body[body.what];
     }
     let response = await fetch(`${host}api/PassManage/updateUser`, {
       method: "POST",
@@ -63,6 +73,24 @@ export default function PassManagerStates({ children }) {
     });
     let data = await response.json();
     if (data.success) {
+      setUserDetails(data.user);
+      window.localStorage.setItem("userPass", JSON.stringify(data.user));
+      return true;
+    } else return false;
+  };
+  const deleteCredential = async (id) => {
+    let response = await fetch(`${host}api/PassManage/deleteCred`, {
+      method: "POST",
+      body: JSON.stringify({
+        id: id,
+        email: userDetails.email,
+        what: selected,
+      }),
+      headers: { Accept: "*/*", "Content-Type": "application.json" },
+    });
+    const data = await response.json();
+    if (data.success) {
+      setUserDetails(data.user);
       window.localStorage.setItem("userPass", JSON.stringify(data.user));
       return true;
     } else return false;
@@ -92,11 +120,15 @@ export default function PassManagerStates({ children }) {
         setLogged,
         mob,
         smMob,
-        text,
         userDetails,
         addUser,
         validateUser,
         updateUser,
+        selected,
+        setSelected,
+        deleteCredential,
+        cred,
+        setCred,
       }}
     >
       {children}

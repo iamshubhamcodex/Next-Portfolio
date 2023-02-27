@@ -53,8 +53,7 @@
 .main .wrapper {
   overflow: hidden;
   --name: 40%;
-  --lastu: 30%;
-  --category: 30%;
+  --category: 40%;
 }
 .main .wrapper .header {
   padding: 2rem 4rem;
@@ -85,11 +84,11 @@
 .main .wrapper .header .name {
   width: var(--name);
 }
-.main .wrapper .header .lastu {
-  width: var(--lastu);
-}
 .main .wrapper .header .category {
   width: var(--category);
+}
+.main .wrapper .header .lastu {
+  width: 6rem;
 }
 .main .wrapper .items .item {
   display: flex;
@@ -125,8 +124,13 @@
   margin-right: 1rem;
 }
 .main .wrapper .items .item .lastu {
-  width: var(--lastu);
-  font-size: 1.25rem;
+  width: 4rem;
+  padding: 5px 7px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+.main .wrapper .items .item .lastu:hover {
+  background-color: #cecece88;
 }
 .main .wrapper .items .item .category {
   width: var(--category);

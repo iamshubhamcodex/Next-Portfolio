@@ -4,7 +4,7 @@ import { useContext, useEffect, useState } from "react";
 
 export default function PassManageSidebar() {
   const [closeSidebar, setCloseSidebar] = useState(false);
-  let { mob } = useContext(PassManagerContext);
+  let { mob, selected, setSelected } = useContext(PassManagerContext);
 
   useEffect(() => {
     setCloseSidebar(mob);
@@ -44,7 +44,14 @@ export default function PassManageSidebar() {
             </svg>
           </label>
         </div>
-        <div className={styles.ids}>
+        <div
+          onClick={() => setSelected("Logins")}
+          className={
+            selected === "Logins"
+              ? `${styles.ids} ${styles.active}`
+              : styles.ids
+          }
+        >
           <svg viewBox="0 0 448 512">
             <path
               fill="currentColor"
@@ -53,34 +60,26 @@ export default function PassManageSidebar() {
           </svg>
           <p>Logins</p>
         </div>
-        <div className={styles.ids}>
+        <div
+          onClick={() => setSelected("Notes")}
+          className={
+            selected === "Notes" ? `${styles.ids} ${styles.active}` : styles.ids
+          }
+        >
           <svg viewBox="0 0 448 512">
             <path
               fill="currentColor"
               d="M64 80c-8.8 0-16 7.2-16 16V416c0 8.8 7.2 16 16 16H288V352c0-17.7 14.3-32 32-32h80V96c0-8.8-7.2-16-16-16H64zM288 480H64c-35.3 0-64-28.7-64-64V96C0 60.7 28.7 32 64 32H384c35.3 0 64 28.7 64 64V320v5.5c0 17-6.7 33.3-18.7 45.3l-90.5 90.5c-12 12-28.3 18.7-45.3 18.7H288z"
             ></path>
           </svg>
-          <p>Secure Notes</p>
+          <p>Notes</p>
         </div>
-        <div className={styles.ids}>
-          <svg viewBox="0 0 576 512">
-            <path
-              fill="currentColor"
-              d="M512 80c8.8 0 16 7.2 16 16v32H48V96c0-8.8 7.2-16 16-16H512zm16 144V416c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V224H528zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm56 304c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24H120zm128 0c-13.3 0-24 10.7-24 24s10.7 24 24 24H360c13.3 0 24-10.7 24-24s-10.7-24-24-24H248z"
-            ></path>
-          </svg>
-          <p>Payments</p>
-        </div>
-        <div className={styles.ids}>
-          <svg viewBox="0 0 448 512">
-            <path
-              fill="currentColor"
-              d="M304 128a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM49.3 464H398.7c-8.9-63.3-63.3-112-129-112H178.3c-65.7 0-120.1 48.7-129 112zM0 482.3C0 383.8 79.8 304 178.3 304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3z"
-            ></path>
-          </svg>
-          <p>Personal Info</p>
-        </div>
-        <div className={styles.ids}>
+        <div
+          onClick={() => setSelected("IDs")}
+          className={
+            selected === "IDs" ? `${styles.ids} ${styles.active}` : styles.ids
+          }
+        >
           <svg aria-hidden="true" viewBox="0 0 576 512">
             <path
               fill="currentColor"
@@ -88,6 +87,22 @@ export default function PassManageSidebar() {
             ></path>
           </svg>
           <p>IDs</p>
+        </div>
+        <div
+          onClick={() => setSelected("Generals")}
+          className={
+            selected === "Generals"
+              ? `${styles.ids} ${styles.active}`
+              : styles.ids
+          }
+        >
+          <svg viewBox="0 0 448 512">
+            <path
+              fill="currentColor"
+              d="M304 128a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM49.3 464H398.7c-8.9-63.3-63.3-112-129-112H178.3c-65.7 0-120.1 48.7-129 112zM0 482.3C0 383.8 79.8 304 178.3 304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3z"
+            ></path>
+          </svg>
+          <p>Generals</p>
         </div>
       </div>
     </div>
