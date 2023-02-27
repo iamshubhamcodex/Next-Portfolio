@@ -8,6 +8,7 @@
   position: absolute;
   height: 100vh;
   width: 70rem;
+  max-width: 90vw;
   background-color: white;
   right: -70rem;
   transition: all 0.35s cubic-bezier(0.2, 0.5, 0.7, 0.9);
@@ -27,6 +28,7 @@
 .container .addPage .body {
   padding: 4rem 7rem;
   height: calc(100vh - 25rem - 10rem);
+  overflow-y: scroll;
 }
 .container .addPage .body .inp {
   width: 100%;
@@ -92,6 +94,23 @@
 }
 .container .addPage .btns p:last-child {
   background-color: rgba(0 0 0/ 0.3);
+}
+
+@media only screen and (max-width: 1400px) {
+  .container .addPage {
+    width: 65rem;
+    right: -65rem;
+  }
+  .container .addPage .body .inp label {
+    font-size: 2.5rem;
+  }
+  .container .addPage .body .inp .input {
+    font-size: 2rem;
+    width: 80%;
+  }
+  .container .addPage .btns p {
+    font-size: 2.5rem;
+  }
 }
 
 @media only screen and (max-width: 720px) {

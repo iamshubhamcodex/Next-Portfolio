@@ -239,10 +239,13 @@
   .main .wrapper .items .item .category {
     font-size: 2.5rem;
   }
+  .main .wrapper .items .item .lastu {
+    width: 6rem;
+  }
 }
 @media only screen and (max-width: 480px) {
   .main .wrapper {
-    --name: 100% !important;
+    --name: 85% !important;
   }
   .main header .adds .add {
     padding: 1.5rem 1.5rem;
@@ -252,5 +255,8 @@
   }
   .main header .adds .add p {
     font-size: 2rem;
+  }
+  .main .wrapper .items .item .lastu {
+    width: 7rem;
   }
 }
