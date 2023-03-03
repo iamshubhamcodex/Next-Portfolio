@@ -19,6 +19,9 @@ export default function NotesNavbar({ isMobile }) {
             >
               React
             </Link>
+            <Link href="Projects/Notes/HtmlCss/introduction-to-html">
+              HTML | CSS
+            </Link>
           </div>
         )}
         {isMobile && !showMenu && (
@@ -45,6 +48,9 @@ export default function NotesNavbar({ isMobile }) {
           >
             <Link href="/Projects/Notes/React/introduction-to-react">
               React
+            </Link>
+            <Link href="Projects/Notes/HtmlCss/introduction-to-html">
+              HTML | CSS
             </Link>
           </div>
         )}

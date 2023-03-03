@@ -1,11 +1,11 @@
 import styles from "@/CSS/Notes/NotesContent.module.css";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Prism from "prismjs";
-import "prismjs/components/prism-jsx";
 import Head from "next/head";
 import host from "@/lib/var";
 import Image from "next/image";
+import "prismjs/components/prism-jsx";
 
 export default function NotesContent({ query, name }) {
   const [content, setContent] = useState([]);
@@ -114,6 +114,7 @@ export default function NotesContent({ query, name }) {
     if (query) {
       getContent();
       getNote();
+      setHref();
     }
   }, [query]);
 
@@ -155,7 +156,7 @@ export default function NotesContent({ query, name }) {
               {content.map((k, i) => {
                 return (
                   <Link
-                    href={"/Projects/Notes/React/" + k.noteId}
+                    href={"/Projects/Notes/" + name + "/" + k.noteId}
                     key={i}
                     className={styles.title}
                   >

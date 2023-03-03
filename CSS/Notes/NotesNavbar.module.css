@@ -56,6 +56,10 @@
   padding: 2rem 6rem;
   transition: all 0.5s cubic-bezier(0.2, -0.53, 0.8, 1.2);
 }
+.nav .navMob * {
+  margin: 2rem 0;
+  display: block;
+}
 .nav .navMob.active {
   z-index: -2;
   top: var(--navHeight);
