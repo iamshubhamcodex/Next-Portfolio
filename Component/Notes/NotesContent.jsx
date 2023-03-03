@@ -124,7 +124,9 @@ export default function NotesContent({ query, name }) {
   return (
     <>
       <Head>
-        <title>{note?.heading} | React</title>
+        <title>
+          {note?.heading} | {name}
+        </title>
       </Head>
       <div className={styles.container}>
         <div className={styles.contContainer}>
