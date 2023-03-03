@@ -81,7 +81,7 @@ export default function ChatAppMain() {
           <div className={styles.chats}>
             <div className={styles.msgCont}>
               {chats &&
-                chats.map((k, i) => {
+                chats?.map((k, i) => {
                   return (
                     <div key={i} className={styles.msg}>
                       <p
