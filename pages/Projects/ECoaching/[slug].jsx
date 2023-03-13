@@ -51,7 +51,6 @@ const DynamicRoute = () => {
       router.push("/Projects/ECoaching/");
       break;
     default:
-      currNavActive = "";
       component = <h1 style={{ marginTop: "10rem" }}>No Such Page</h1>;
   }
   return (

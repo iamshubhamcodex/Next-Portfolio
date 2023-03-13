@@ -9,7 +9,7 @@ export default function ECoachingNavbar() {
 
   const NavItems = ({ name }) => {
     let href = "/Projects/ECoaching/" + name;
-    if (name === "Home") href = "";
+    if (name === "Home") href = "/Projects/ECoaching";
     if (name === "Back Home") href = "/Portfolio";
     return (
       <>
