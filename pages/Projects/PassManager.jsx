@@ -80,6 +80,7 @@ export default function PassManager() {
     if (temp && temp !== "undefined") {
       createMPassContent(JSON.parse(temp));
     }
+    //eslint-disable-next-line
   }, []);
 
   return (

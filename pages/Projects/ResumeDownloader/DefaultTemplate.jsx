@@ -1,4 +1,3 @@
-import fillTemplate from "@/Component/ResumeDownloader/template";
 import styles from "@/CSS/ResumeDownloader/template.module.css";
 import Head from "next/head";
 
@@ -35,7 +34,7 @@ export default function template() {
   return (
     <>
       <Head>
-        <title>{fullName}'s Resume | ResumeDownloader</title>
+        <title>{fullName}&apos;s Resume | ResumeDownloader</title>
       </Head>
       <div className={styles.body}>
         <link

@@ -10,15 +10,12 @@ import { useRouter } from "next/router";
 import { useContext, useEffect, useState } from "react";
 import { ECoachingContext } from "@/Context/ECoaching/ECoachingStates";
 import Head from "next/head";
-// import Alert from "@/Component/ECoaching/ECoachingAlert";
 
 const DynamicRoute = () => {
-  let { setNavActive, alert, setLogged, setAlert, logged } =
-    useContext(ECoachingContext);
+  let { setNavActive, setLogged } = useContext(ECoachingContext);
   const router = useRouter();
   let { slug } = router.query;
   let component;
-  let currNavActive = slug;
 
   useEffect(() => {
     if (slug === "Home") setLogged(false);
@@ -63,7 +60,6 @@ const DynamicRoute = () => {
         <title>{slug} - ECoaching | Projects</title>
       </Head>
       <ECoachingNavbar />
-      {/* {alert.bool && <Alert msg={alert.msg} succ={alert.suc} />} */}
       {component}
     </>
   );

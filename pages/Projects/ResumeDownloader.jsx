@@ -183,7 +183,7 @@ export default function ResumeDownloader() {
                 <div className={styles.p}>
                   Languages you know
                   <br />
-                  (languages seperated by "_")
+                  (languages seperated by &quot;_&quot;)
                 </div>
                 <div className={styles.gen}>
                   <div className={styles.inp}>
@@ -205,7 +205,7 @@ export default function ResumeDownloader() {
                 <div className={styles.p}>
                   Certification you own
                   <br />
-                  (certifications seperated by "_")
+                  (certifications seperated by &quot;_&quot;)
                 </div>
                 <div className={styles.gen}>
                   <div className={styles.inp}>
@@ -243,7 +243,7 @@ export default function ResumeDownloader() {
                 <div className={styles.p}>
                   Education you have Completed
                   <br />
-                  (education seperated by "_")
+                  (education seperated by &quot;_&quot;)
                 </div>
                 <div className={styles.gen}>
                   <div className={styles.inp}>
@@ -265,7 +265,7 @@ export default function ResumeDownloader() {
                 <div className={styles.p}>
                   Experience you have
                   <br />
-                  (certifications seperated by "_")
+                  (certifications seperated by &quot;_&quot;)
                 </div>
                 <div className={styles.gen}>
                   <div className={styles.inp}>
