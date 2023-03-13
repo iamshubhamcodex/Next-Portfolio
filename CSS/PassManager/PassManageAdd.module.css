@@ -6,7 +6,7 @@
 }
 .container .addPage {
   position: absolute;
-  height: 100vh;
+  height: 100dvh;
   width: 70rem;
   max-width: 90vw;
   background-color: white;
@@ -27,7 +27,7 @@
 }
 .container .addPage .body {
   padding: 4rem 7rem;
-  height: calc(100vh - 25rem - 10rem);
+  height: calc(100dvh - 25rem - 10rem);
   overflow-y: scroll;
 }
 .container .addPage .body .inp {

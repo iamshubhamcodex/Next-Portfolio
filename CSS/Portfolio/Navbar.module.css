@@ -79,7 +79,7 @@
   position: fixed;
   top: 0;
   right: 0;
-  min-height: 100vh;
+  min-height: 100dvh;
   min-width: 50vw;
   width: max-content;
   border: 1px solid #ff7900;
@@ -104,6 +104,7 @@
   margin: 3rem 0;
   font-family: "Inter", sans-serif;
   cursor: pointer;
+  overflow-y: auto;
 }
 .navItemm:hover,
 .navModal .close:hover,

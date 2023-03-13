@@ -6,7 +6,7 @@
   transition: opacity 0.3s linear, translate 0.3s linear;
 }
 .about .cont {
-  min-height: calc(100vh - var(--navHeight));
+  min-height: calc(100dvh - var(--navHeight));
   height: max-content;
   background-color: #d4c2be;
   padding: 3vmax;
@@ -16,7 +16,7 @@
   width: 40%;
 }
 .about .cont .left img {
-  height: calc(90vh - 6vmax);
+  height: calc(90dvh - 6vmax);
 }
 .about .cont .right {
   translate: 0 10%;

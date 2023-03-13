@@ -2,7 +2,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  min-height: calc(100vh - 5rem);
+  min-height: calc(100dvh - 5rem);
   background: rgb(225, 255, 177);
   background: radial-gradient(
     circle,
@@ -106,7 +106,7 @@
 }
 @media only screen and (max-width: 720px) {
   .container {
-    min-height: calc(100vh - 7rem);
+    min-height: calc(100dvh - 7rem);
   }
   .container .main .left h1 {
     font-size: 5rem;

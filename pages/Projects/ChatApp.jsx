@@ -1,3 +1,4 @@
+import ChatAppLogin from "@/Component/ChatApp/ChatAppLogin";
 import ChatAppMain from "@/Component/ChatApp/ChatAppMain";
 import ChatAppSidebar from "@/Component/ChatApp/ChatAppSidebar";
 import { ChatAppContext } from "@/Context/ChatApp/ChatAppStates";
@@ -10,7 +11,8 @@ export default function ChatApp() {
   let { logged } = useContext(ChatAppContext);
 
   useEffect(() => {
-    if (!logged) router.push("/Projects/ChatApp/Login");
+    if (!logged) window.history.pushState({}, "", "/Projects/ChatApp/Login");
+    // if (!logged) router.push("/Projects/ChatApp/Login");
   }, []);
 
   return (
@@ -18,10 +20,14 @@ export default function ChatApp() {
       <Head>
         <title>ChatApp</title>
       </Head>
-      <div style={{ display: "flex" }}>
-        <ChatAppSidebar />
-        <ChatAppMain />
-      </div>
+      {!logged && <ChatAppLogin />}
+
+      {logged && (
+        <div style={{ display: "flex" }}>
+          <ChatAppSidebar />
+          <ChatAppMain />
+        </div>
+      )}
     </>
   );
 }

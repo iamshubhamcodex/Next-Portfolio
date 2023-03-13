@@ -13,14 +13,11 @@ export default function NotesNavbar({ isMobile }) {
         </Link>
         {!isMobile && (
           <div className={styles.menus}>
-            <Link
-              href="/Projects/Notes/React/introduction-to-react"
-              className={styles.items}
-            >
+            <Link href="/Portfolio">Back Home</Link>
+            <Link href="/Projects/Notes/Html/introduction-to-html">HTML</Link>
+            <Link href="/Projects/Notes/Css/introduction-to-css">CSS</Link>
+            <Link href="/Projects/Notes/React/introduction-to-react">
               React
-            </Link>
-            <Link href="Projects/Notes/HtmlCss/introduction-to-html">
-              HTML | CSS
             </Link>
           </div>
         )}
@@ -46,11 +43,10 @@ export default function NotesNavbar({ isMobile }) {
                 : `${styles.navMob}`
             }
           >
+            <Link href="/Projects/Notes/Html/introduction-to-html">HTML</Link>
+            <Link href="/Projects/Notes/Css/introduction-to-css">CSS</Link>
             <Link href="/Projects/Notes/React/introduction-to-react">
               React
-            </Link>
-            <Link href="Projects/Notes/HtmlCss/introduction-to-html">
-              HTML | CSS
             </Link>
           </div>
         )}

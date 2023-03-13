@@ -1,14 +1,14 @@
 .contact {
   margin-top: var(--navHeight);
   background-color: #9eb5c7;
-  min-height: calc(100vh - var(--navHeight));
+  min-height: calc(100dvh - var(--navHeight));
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 .contact img {
   width: 40%;
-  height: calc(100vh - var(--navHeight));
+  height: calc(100dvh - var(--navHeight));
 }
 .contact .forms {
   border-radius: 7px;

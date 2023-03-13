@@ -6,11 +6,14 @@ import Head from "next/head";
 import host from "@/lib/var";
 import Image from "next/image";
 import "prismjs/components/prism-jsx";
+import "prismjs/components/prism-css";
+import "prismjs/components/prism-markup";
 
 export default function NotesContent({ query, name }) {
   const [content, setContent] = useState([]);
   const [note, setNote] = useState();
   const [href, setHref] = useState();
+  const [wordCount, setWordCount] = useState(0);
 
   const getPdf = async (val) => {
     let response = await fetch(`${host}api/lib/download`, {
@@ -110,6 +113,24 @@ export default function NotesContent({ query, name }) {
   const highlight = async () => {
     await Prism.highlightAll();
   };
+  const getCodeCount = (val, count) => {
+    if (val < 100) return count + 0.25;
+    else {
+      return getCodeCount(val - 100, count + 0.5);
+    }
+  };
+  const getWordCount = () => {
+    let wordcount = 0;
+    let codeCount = 0;
+    note?.contents?.map((k) => {
+      if (k.texttype !== "code") wordcount += k.content.split(" ").length;
+      else {
+        console.log();
+        codeCount += getCodeCount(k.content.split("").length, 0);
+      }
+    });
+    setWordCount(parseInt(wordcount / 95 + codeCount));
+  };
   useEffect(() => {
     if (query) {
       getContent();
@@ -119,7 +140,8 @@ export default function NotesContent({ query, name }) {
   }, [query]);
 
   useEffect(() => {
-    if (note) highlight();
+    highlight();
+    getWordCount();
   }, [note]);
   return (
     <>
@@ -133,6 +155,11 @@ export default function NotesContent({ query, name }) {
           <div className={styles.content}>
             <h1>{note?.heading}</h1>
             <div className={styles.blog}>
+              {note && (
+                <p className={`${styles.para} ${styles.bold}`}>
+                  ReadTime would be approx: {wordCount}minutes
+                </p>
+              )}
               {note?.contents &&
                 note?.contents.map((k, i) => {
                   return getPara(k, i);

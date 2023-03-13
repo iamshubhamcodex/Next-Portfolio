@@ -3,7 +3,8 @@ import styles from "@/CSS/Notes/NotesMain.module.css";
 import Link from "next/link";
 import ReactImage from "@/Assets/Notes/React.webp";
 import JSImage from "@/Assets/Notes/JavaScript.png";
-import HTMLCSSImage from "@/Assets/Notes/HtmlCss.png";
+import HTMLImage from "@/Assets/Notes/Html.png";
+import CSSImage from "@/Assets/Notes/Css.png";
 
 export default function NotesMain() {
   return (
@@ -13,13 +14,22 @@ export default function NotesMain() {
           <h1>Available Notes</h1>
           <div className={styles.notes}>
             <Link
-              href="/Projects/Notes/HtmlCss/introduction-to-html"
+              href="/Projects/Notes/Html/introduction-to-html"
               className={styles.note}
             >
-              <Image src={HTMLCSSImage} alt="React" />
+              <Image src={HTMLImage} alt="HTML" />
               <p>
-                Learn HTML CSS from basic. Also build awesome project with this
+                Learn HTML from basic. Also build awesome project with this
                 guide
+              </p>
+            </Link>
+            <Link
+              href="/Projects/Notes/Css/introduction-to-css"
+              className={styles.note}
+            >
+              <Image src={CSSImage} alt="CSS" />
+              <p>
+                Learn CSS from basic. Also build awesome project with this guide
               </p>
             </Link>
             <Link

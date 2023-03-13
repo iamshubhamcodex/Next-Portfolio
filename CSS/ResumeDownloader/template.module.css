@@ -1,0 +1,117 @@
+.body {
+  background-image: linear-gradient(110deg, #f93d66, #6d47d9);
+  height: 100vh;
+  font-family: manjari;
+  color: var(--black);
+  --yellow: #ffc600;
+  --black: #272727;
+}
+.paper {
+  background-color: rgb(245, 245, 245);
+  width: 75%;
+  display: block;
+  margin: 60px auto 60px auto;
+  border-radius: 3px;
+  padding: 50px;
+  box-shadow: -10px 40px 60px rgb(71, 71, 71);
+}
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.img img {
+  height: 200px;
+  padding: 10px;
+  border: 2px solid #e7395f;
+  border-radius: 50%;
+}
+.img {
+  flex-grow: 0.2;
+}
+.namenJob {
+  line-height: 30px;
+}
+.name {
+  font-size: 3rem;
+  font-weight: bold;
+}
+.job {
+  font-family: pacifico;
+}
+.info {
+  display: grid;
+  grid-template-columns: 40% auto;
+  margin-top: 30px;
+}
+.left {
+  border-left: 2px solid rgb(105, 105, 105);
+  padding-left: 30px;
+}
+.headLine {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  border-bottom: 2px solid rgb(87, 87, 87);
+  width: 60%;
+}
+.profile {
+  padding-left: 10px;
+  font-weight: bold;
+}
+.about {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 35px;
+  line-height: 25px;
+}
+.container p {
+  margin-bottom: 20px;
+}
+.resumeBtn {
+  margin: 2rem 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 1rem 2rem;
+  color: white;
+  font-weight: bolder;
+  cursor: pointer;
+  border-radius: 3px;
+}
+.resumeBtn a {
+  color: white;
+}
+#Certifications {
+  margin-top: 30px;
+}
+.edu {
+  justify-content: flex-start;
+  line-height: 40px;
+}
+.lang {
+  line-height: 27px;
+}
+@media only screen and (max-width: 1200px) {
+  .info {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .name {
+    font-size: 2rem;
+  }
+  .header {
+    display: grid;
+    grid-gap: 20px;
+    justify-content: flex-start;
+  }
+  .paper {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 720px) {
+  .paper {
+    width: 100%;
+  }
+}

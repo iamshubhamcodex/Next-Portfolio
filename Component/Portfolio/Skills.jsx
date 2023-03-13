@@ -7,11 +7,11 @@ const Skills = (props) => {
         <h1>Skills</h1>
         <div className={styles.sides}>
           <ul className={styles.lists}>
-            <li>Core Java</li>
-            <li>DSA and Algo</li>
-            <li>Competetive Java</li>
-            <li>Java Swing</li>
-            <li>Problem Solving</li>
+            <li>HTML | CSS</li>
+            <li>JavaScript</li>
+            <li>React</li>
+            <li>Express</li>
+            <li>MongoDB</li>
           </ul>
           <div className={styles.hr}>hi</div>
           <ul className={styles.bars}>
@@ -34,7 +34,7 @@ const Skills = (props) => {
         </div>
         <p className={styles.learn}>
           I also belive in learning all the time and increasing my knowledge on
-          the Java and further extend my Skills to other languages.
+          MERN stack and further extend my Skills to other languages.
         </p>
       </div>
     </>

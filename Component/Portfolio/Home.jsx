@@ -12,7 +12,7 @@ export default function Home(props) {
             I’m <span>Shubham</span> <span>Singh</span>
           </h3>
           <p className={styles.idk}>
-            I'm pursuing <span>B. Tech. CSE</span>
+            I'm pursuing my own <span>Passion</span>
           </p>
           <a href="#about" className={styles.btn}>
             About Me
