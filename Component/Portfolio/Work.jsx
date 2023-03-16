@@ -71,7 +71,7 @@ export default function Work(props) {
             img={ECoachingPng}
             title="ECoaching"
             span="Online Coaching Website"
-            text="This website is like a template for any offline coaching that wants it's online Website."
+            text="I made this website in guidance of Mohan Sir for their Coaching, which they wants to take it to Online Platform."
             name="ECoaching"
           />
           <Card

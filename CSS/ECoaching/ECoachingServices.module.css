@@ -1,5 +1,5 @@
 .services {
-  height: 100dvh;
+  height: 100vh;
   width: calc(100vw - 6vmax);
   overflow: hidden;
   height: max-content;
@@ -25,7 +25,7 @@
 }
 .services .offers .left,
 .services .offers .right {
-  height: calc(100dvh - var(--navHeight) - 15vmax);
+  height: calc(100vh - var(--navHeight) - 15vmax);
   width: calc(50% - 15px);
   position: relative;
 }
@@ -131,7 +131,7 @@
     flex-direction: column;
   }
   .services .offers .left {
-    height: calc(calc(100dvh - var(--navHeight) - 15vmax) / 2);
+    height: calc(calc(100vh - var(--navHeight) - 15vmax) / 2);
   }
   .services .offers .left,
   .services .offers .right {

@@ -1,6 +1,6 @@
 .profile {
   margin-top: var(--navHeight);
-  min-height: calc(100dvh - var(--navHeight));
+  min-height: calc(100vh - var(--navHeight));
   background-color: aliceblue;
   display: grid;
   place-content: center;

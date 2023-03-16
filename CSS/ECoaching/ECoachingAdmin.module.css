@@ -1,6 +1,6 @@
 .dashboard {
   margin-top: var(--navHeight);
-  min-height: calc(100dvh - var(--navHeight));
+  min-height: calc(100vh - var(--navHeight));
   background-color: beige;
   display: grid;
   place-content: center;

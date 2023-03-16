@@ -2,7 +2,7 @@
   margin-top: var(--navHeight);
   padding: 3vmax 4vmax;
   background-color: rgb(237, 224, 208);
-  min-height: 100dvh;
+  min-height: 100vh;
   height: max-content;
 }
 .courses h1 {

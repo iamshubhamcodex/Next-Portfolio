@@ -1,7 +1,7 @@
 .logReg {
   margin-top: var(--navHeight);
   background-color: #a7a7ae;
-  height: calc(100dvh - var(--navHeight));
+  height: calc(100vh - var(--navHeight));
   display: flex;
   justify-content: center;
   align-items: center;
@@ -127,7 +127,7 @@
 }
 @media only screen and (max-width: 720px) {
   .logReg .cont {
-    min-height: 60dvh;
+    min-height: 60vh;
     height: max-content;
   }
   .logReg .cont .log {

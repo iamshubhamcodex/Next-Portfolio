@@ -1,7 +1,7 @@
 .container {
   top: 5rem;
   position: absolute;
-  height: calc(100dvh - 5rem);
+  height: calc(100vh - 5rem);
   width: 100%;
   background-color: rgba(0 0 0 / 0);
   display: none;
@@ -15,7 +15,7 @@
   position: absolute;
   top: 5rem;
   margin-top: 2rem;
-  height: calc(100dvh - 9rem);
+  height: calc(100vh - 9rem);
   left: -50%;
   max-width: 70rem;
   width: 50%;

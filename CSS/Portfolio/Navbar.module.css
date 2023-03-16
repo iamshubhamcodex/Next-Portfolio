@@ -79,7 +79,7 @@
   position: fixed;
   top: 0;
   right: 0;
-  min-height: 100dvh;
+  min-height: 100vh;
   min-width: 50vw;
   width: max-content;
   border: 1px solid #ff7900;

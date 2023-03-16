@@ -45,11 +45,11 @@
 }
 
 .nav .navMob {
-  height: calc(100dvh - var(--navHeight));
+  height: calc(100vh - var(--navHeight));
   width: 100%;
   background-color: whitesmoke;
   position: fixed;
-  top: -100dvh;
+  top: -100vh;
   left: 0;
   opacity: 0;
   z-index: -2;
