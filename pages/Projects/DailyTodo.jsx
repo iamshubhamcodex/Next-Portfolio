@@ -77,10 +77,10 @@ export default function DailyTodo() {
   return (
     <>
       <Head>
-        <link
+        {/* <link
           href="https://fonts.googleapis.com/css?family=Nunito:400,700"
           rel="stylesheet"
-        ></link>
+        ></link> */}
         <title>Daily Todo | Projects</title>
       </Head>
       <div className={styles.body}>
@@ -108,7 +108,7 @@ export default function DailyTodo() {
             </div>
             {todos?.todo.map((todo, i) => {
               return (
-                <div className={styles.task}>
+                <div className={styles.task} key={i}>
                   <input type="checkbox" name="" id={"check" + i} />
                   <label htmlFor={"check" + i}>{todo}</label>
                 </div>
