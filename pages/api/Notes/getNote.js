@@ -8,7 +8,8 @@ export default async function handler(req, res) {
 
   if (method === "POST") {
     try {
-      let note = await Note.find(JSON.parse(body));
+      let note = await Note.find(body);
+      // let note = await Note.find(JSON.parse(body));
       res.status(201).json({ success: true, note: note });
     } catch (error) {
       console.log(error.message);
