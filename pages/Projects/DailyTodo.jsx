@@ -44,23 +44,33 @@ export default function DailyTodo() {
     let data = await response.json();
     if (data.success) {
       setTodoName("Saved Score");
-      GetTodo();
+      GetTodo(true);
       setTimeout(() => {
         setTodoName("");
       }, 2000);
     }
   };
-  const GetTodo = async () => {
-    let response = await fetch(host + "api/DailyTodo/todo", {
-      method: "GET",
-      headers: {
-        Accept: "*/*",
-        "Content-Type": "application/json",
-      },
-    });
-    let data = await response.json();
-    if (data.success) {
-      setTodos(data.todo);
+  const GetTodo = async (score = false) => {
+    if (score) {
+      setTodoName("Getting Todo...");
+      let response = await fetch(host + "api/DailyTodo/todo", {
+        method: "GET",
+        headers: {
+          Accept: "*/*",
+          "Content-Type": "application/json",
+        },
+      });
+      let data = await response.json();
+      if (data.success) {
+        setTodos(data.todo);
+        localStorage.setItem("todos", JSON.stringify(data.todo));
+        setTodoName("");
+      }
+    } else {
+      let todos = localStorage.getItem("todos");
+      if (!todos) {
+        GetTodo(true);
+      } else setTodos(JSON.parse(todos));
     }
   };
   const submitReport = () => {
@@ -70,26 +80,42 @@ export default function DailyTodo() {
   const WithDraw = () => {
     SaveScore(-200);
   };
+  const greet = () => {
+    let date = new Date();
+    let hour = date.getHours();
+
+    if (hour >= 6 && hour < 12) {
+      return "Good Morning";
+    } else if (hour >= 12 && hour < 16) {
+      return "Good Afternoon";
+    } else if (hour >= 16 && hour < 20) {
+      return "Good Evening";
+    } else if (hour >= 20 && hour < 24) {
+      return "Good Night";
+    } else {
+      return "Fucking Up!";
+    }
+  };
+
   useEffect(() => {
+    greet();
     GetTodo();
   }, []);
 
   return (
     <>
       <Head>
-        {/* <link
-          href="https://fonts.googleapis.com/css?family=Nunito:400,700"
-          rel="stylesheet"
-        ></link> */}
         <title>Daily Todo | Projects</title>
       </Head>
       <div className={styles.body}>
         <div className={styles.todoContainer}>
           <div className={styles.logo}>
-            <Image src={Logo} alt="" />
+            <Image src={Logo} alt="Logo" />
           </div>
-          <div className={styles.greet}>Hello 🖖, Good Morning</div>
-          <div className={styles.greet}>Your Score: {todos?.score}</div>
+          <div className={styles.greet}>Hello🖖 Shubham, {greet()}</div>
+          <div className={styles.greet + " " + styles.small}>
+            Your Score: {todos?.score}
+          </div>
 
           <div className={styles.tasks}>
             <div className={styles.create + " " + styles.input}>
