@@ -6,8 +6,9 @@ import host from "@/lib/var";
 import { useEffect, useState } from "react";
 
 export default function DailyTodo() {
-  const [todoName, setTodoName] = useState();
-  const [todos, setTodos] = useState();
+  const [todoName, setTodoName] = useState("");
+  const [todos, setTodos] = useState({ todo: [] });
+  const [price, setPrice] = useState(0);
 
   const SaveTodo = async () => {
     setTodoName("Saving...");
@@ -78,7 +79,8 @@ export default function DailyTodo() {
     SaveScore(all.length);
   };
   const WithDraw = () => {
-    SaveScore(-200);
+    SaveScore(-1 * parseInt(price));
+    setPrice(0);
   };
   const greet = () => {
     let date = new Date();
@@ -142,9 +144,25 @@ export default function DailyTodo() {
             })}
 
             <button onClick={submitReport}>Submit Today Report</button>
-            {todos?.score >= 200 && (
-              <button onClick={WithDraw}>Withdraw Money Rs.200</button>
-            )}
+            <div className={styles.create + " " + styles.input}>
+              <input
+                value={price}
+                onChange={(e) => setPrice((prev) => e.target.value)}
+                type="number"
+                placeholder="Withdraw Money..."
+              />
+              <span
+                onClick={WithDraw}
+                style={{
+                  fontSize: 15,
+                  fontVariant: "all-small-caps",
+                  margin: " 0 10px",
+                  cursor: "pointer",
+                }}
+              >
+                Withdraw
+              </span>
+            </div>
           </div>
         </div>
       </div>
